@@ -1,0 +1,47 @@
+/* pages/rankList/rankList.wxss */
+page{
+  background: #f5f5f5;
+}
+
+.switchBox{
+  height: 90rpx;
+  width: 100%;
+  font-size: 28rpx;
+  background: white;
+}
+
+.swicthBtn{
+  height: 100%;
+  width: 33.3%;
+  line-height: 90rpx;
+  text-align: center
+}
+
+.ListTitle{
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #ebebeb;
+}
+
+.titleItem{
+  width: 33.3%;
+  height: 100%;
+}
+
+.List{
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #ebebeb;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.listItem{
+  width: 33.3%;
+  border-right: 1rpx solid #ebebeb;
+  overflow: hidden;
+}

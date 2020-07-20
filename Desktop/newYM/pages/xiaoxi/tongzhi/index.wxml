@@ -1,0 +1,18 @@
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class='page'>
+
+  <view class='coupon-box'>
+    <view class='coupon-item flex flex-ver flex-jcsb' >
+      <view class='couponInfo'>
+        <view>{{title}}</view>
+        <!-- <rich-text nodes="{{msg}}"></rich-text> -->
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        <view>
+          <text>{{time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="tongzhi" wx:if="{{chargetype}}" bindtap="tongzhi" data-tgid="{{tgid}}">团购通知</view>
+  </view>
+
+</view>

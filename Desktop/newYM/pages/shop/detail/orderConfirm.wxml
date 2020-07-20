@@ -1,0 +1,52 @@
+<!--pages/shop/detail/orderConfirm.wxml-->
+<view class="locInfo flex flex-ver">
+  <image src="/static/images/icon/loc.png" mode="aspectFit"></image>
+  <view>
+    <view class="ell" style="font-size:30rpx;font-weight:bold;">{{merchDetail.merchname}}</view>
+    <view class="ell" style="font-size:26rpx;color:#373737">{{merchDetail.store_address}}</view>
+  </view>
+</view>
+<image src="/static/images/border.png" mode="aspectFit"></image>
+<view class="tabBox flex flex-center">
+  <view style="margin-right:114rpx" class="active">消费金额</view>
+  <view bindtap="nonparticipator" class="{{isShow?'active':''}}">不参与消费金额</view>
+</view>
+<view class="inputBox flex flex-center">
+  ￥<input type='digit' bindinput='xiaofei' placeholder='请输入消费金额'></input>
+</view>
+<view class="inputBox flex flex-center" wx:if="{{isShow}}">
+  ￥<input type='digit' bindinput='bucanyu' placeholder='请输入不参与优惠金额'></input>
+</view>
+<view class="rule">
+  <text style="color:#E40B7B">{{youhuiInfo.name}}</text>
+  <image src="/static/images/icon/wait-128.png"></image>
+  使用时间：{{youhuiInfo.starttime}}~{{youhuiInfo.endtime}}
+</view>
+
+<button class="pay" bindtap='pay'>付款</button>
+
+<!-- <view class='content_box'>
+  <view class='content_div'>
+    <text>消费金额(元)</text>
+    <input class='coloa'></input>
+  </view>
+  <view class='content_div'>
+    <text>不参与优惠金额(元)</text>
+    <input class='coloa' type='digit' bindinput='bucanyu' placeholder='请输入不参与优惠金额'></input>
+  </view>
+  <view class='content_div'>
+    <text class='coloa'>{{merchDetail.merchname}}</text>
+    <text class='coloa'>{{youhuiInfo.starttime}}~{{youhuiInfo.endtime}}</text>
+  </view>
+  <view class='content_div'>
+    <text>红包抵扣(<text class="colob">{{discountsNum}}</text>)</text>
+    <switch color="#e532a0" class='switch' bindchange="switchChange"></switch>
+  </view>
+  <view class='content_div'>
+    <text>实付金额(元)</text>
+    <text class='colob'>{{price}}</text>
+  </view>
+</view>
+<view class='butt_box'>
+  <button bindtap='pay'>支付</button>
+</view> -->

@@ -1,0 +1,25 @@
+<!--pages/attribute/attribute.wxml-->
+<view class='text_box'>套餐内容</view>
+<!--列表内容------------------------------ -->
+<checkbox-group bindchange="checkboxChange">
+  <view class='contempt_box'>
+    <view class='contempt_div' wx:for="{{goodsList}}" wx:key="index">
+      <view class='contempt_left'>
+        <image src='{{item.thumb}}'></image>
+        <view class='tiel'>
+          <text>{{item.title}}</text>
+          <text>商品价格：{{item.marketprice}}</text>
+          <view class='tiel_view'>
+            商品数量：
+            <input placeholder='请输入商品数量' data-index='{{index}}' data-id='{{item.id}}' type='number' bindinput='num'></input>
+          </view>
+        </view>
+      </view>
+      <label>
+        <checkbox value='{{index}}'></checkbox>
+      </label>
+    </view>
+  </view>
+</checkbox-group>
+<view class='buttan' bindtap='next'>下一步</view>
+<!--  -->

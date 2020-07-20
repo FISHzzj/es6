@@ -1,0 +1,13 @@
+<!--pages/newsto/newsto.wxml-->
+<view class='content_box'>
+  <view class='content_div' wx:for="{{list}}" wx:key="index">
+    <view class='leixtex'>
+      <text>消息类型：{{item.rechargetype}}</text>
+      <text>{{item.createtime}}</text>
+    </view>
+    <text class='coloa'>{{item.title}}</text>
+    <view class='jiegotex'>
+      {{item.content}}
+    </view>
+  </view>
+</view>

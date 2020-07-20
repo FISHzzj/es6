@@ -1,0 +1,100 @@
+<!--pages/merchant/index.wxml-->
+<view class='top'>
+  <view style='color:white;font-size:28rpx;text-align:center;'>{{pageInfo.user.merchname}}</view>
+  <view class='searchCase flex flex-ver flex-jcsb'>
+    <input placeholder='请输入券号' placeholder-class='inpStyle'></input>
+    <image src='/static/images/icon/search.png'></image>
+  </view>
+  <view class='flex'>
+    <view class='topBnt' bindtap='scan'>
+      <image src='/static/images/icon/scan.png' mode="widthFix"></image>
+      扫描验券
+    </view>
+    <navigator url="/pages/merchant/checkOrderList/checkOrderList" class='topBnt'>
+      <image src='/static/images/icon/story.png' mode="widthFix"></image>
+      核销记录
+    </navigator>
+  </view>
+</view>
+
+<!-- 数据信息 -->
+<view class='info'>
+  <view style='font-size: 32rpx;color:#333;font-weight:bold;'>{{pageInfo.recordprice}}</view>
+  <view style='color:#c5c5c5'>({{pageInfo.recordnum}}笔)</view>
+  <view style='color:#8f8f8f'>今日核销总额</view>
+</view>
+
+<view class='flex flex-wrap'>
+  <view class='li' bindtap='scan'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>验券</view>
+  </view>
+  <navigator url='/pages/merchant/order/index' class='li'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>订单</view>
+  </navigator>
+  <navigator url='/pages/merchant/billingDetails/billingDetails' class='li'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>结算</view>
+  </navigator>
+  <navigator class='li' url='/pages/merchant/teamBuy/list/list'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>团购</view>
+  </navigator>
+  <navigator url='/pages/merchant/CanYouDo/CanYouDo' class='li'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>资质</view>
+  </navigator>
+  <view class='li' bindtap='popularize'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>推广二维码</view>
+  </view>
+  <navigator class='li' url='/pages/merchant/merchantInfo/merchantInfo?type=2'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>门店</view>
+  </navigator>
+  <navigator url='/pages/merchant/manageData/manageData' class='li'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>数据</view>
+  </navigator>
+  <navigator class='li' url="/pages/order/refund/index">
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>退款</view>
+  </navigator>
+  <navigator url='/pages/merchant/addGoods/addGoods' class='li'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>添加商品</view>
+  </navigator>
+  <view class='li' bindtap='collection'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>收款二维码</view>
+  </view>
+  <navigator url='/pages/merchant/enter/Sett_mengdian/Sett_mengdian?type=2' class='li'>
+    <image src='/static/images/icon/fnIcon.png'></image>
+    <view>完善店铺信息</view>
+  </navigator>
+</view>
+
+<view class='memberBtm flex'>
+  <navigator url='/pages/merchant/index' open-type='redirect'>
+    <image src='/static/images/tabbar/icon-1.png'></image>
+    <view>首页</view>
+  </navigator>
+  <navigator url='/pages/merchant/newsto'>
+    <image src='/static/images/tabbar/msgIcon.png'></image>
+    <view>消息</view>
+  </navigator>
+  <navigator url='/pages/member/index/index' open-type='switchTab'>
+    <image src='/static/images/tabbar/icon-5.png'></image>
+    <view>我的</view>
+  </navigator>
+  <navigator url='/pages/homePage/homePage' open-type='switchTab'>
+    <image src='/static/images/tabbar/backIcon.png'></image>
+    <view>返回商城</view>
+  </navigator>
+</view>
+
+<view class='codeBox flex flex-ver' wx:if="{{codeQR}}">
+  <image src='{{qrUrl}}' mode='widthFix'></image>
+  <view class='closeBtn' bindtap='clsoe'>关闭</view>
+</view>

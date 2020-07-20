@@ -1,0 +1,47 @@
+<!--pages/my/chitchat/index.wxml-->
+<view class="container">
+  <view class="chat_left flex ">
+    <view class="chat_time">2019-11-26 11:49:04</view>
+    <image src="http://6703.chac.xyz/attachment/images/1/2019/11/VVUv17vUva7Vd7EBvTaMm3M3zCEvmv.jpg"></image>
+    <view class="chat_neirong">
+      <view class="chat_name">小西南</view>
+      <view>掘金掘金军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军掘金掘金军军军军军军军军军军军军军军军军军军军军军军军</view>
+    </view>
+  </view>
+   <view class="chat_right flex ">
+    <view class="chat_time">2019-11-26 11:49:04</view>
+    <view class="chat_neirong">
+      <view class="chat_name_right">小西南</view>
+      <view>掘金掘金军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军掘金掘金军军军军军军军军军军军军军军军军军军军军军军军</view>
+    </view>
+    <image src="http://6703.chac.xyz/attachment/images/1/2019/11/VVUv17vUva7Vd7EBvTaMm3M3zCEvmv.jpg"></image>
+  </view>
+  <view class="chat_left flex ">
+    <view class="chat_time">2019-11-26 11:49:04</view>
+    <image src="http://6703.chac.xyz/attachment/images/1/2019/11/VVUv17vUva7Vd7EBvTaMm3M3zCEvmv.jpg"></image>
+    <view class="chat_neirong">
+      <view class="chat_name">小西南</view>
+      <view>掘金掘金军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军掘金掘金军军军军军军军军军军军军军军军军军军军军军军军</view>
+    </view>
+  </view>
+   <view class="chat_right flex ">
+    <view class="chat_time">2019-11-26 11:49:04</view>
+    <view class="chat_neirong">
+      <view class="chat_name_right">小西南</view>
+      <view>掘金掘金军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军掘金掘金军军军军军军军军军军军军军军军军军军军军军军军</view>
+    </view>
+    <image src="http://6703.chac.xyz/attachment/images/1/2019/11/VVUv17vUva7Vd7EBvTaMm3M3zCEvmv.jpg"></image>
+  </view>
+  <view class="chat_right flex ">
+    <view class="chat_time">2019-11-26 11:49:04</view>
+    <view class="chat_neirong">
+      <view class="chat_name_right">小西南</view>
+      <view>掘金掘金军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军军掘金掘金军军军军军军军军军军军军军军军军军军军军军军军</view>
+    </view>
+    <image src="http://6703.chac.xyz/attachment/images/1/2019/11/VVUv17vUva7Vd7EBvTaMm3M3zCEvmv.jpg"></image>
+  </view>
+  <view class="chat_bottom">
+    <input placeholder="请输入聊天内容" class="chat_input"></input>
+    <view class="fasong">发送</view>
+  </view>
+</view>

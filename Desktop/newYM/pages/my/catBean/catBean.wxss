@@ -1,0 +1,66 @@
+/* pages/my/catBean/catBean.wxss */
+page{
+  background: #f5f5f5;
+}
+
+.top{
+  height: 160rpx;
+  background: white;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-top: 30rpx;
+  line-height: 48rpx;
+  box-sizing: border-box;
+}
+
+.top>view{
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  border-bottom: 4rpx solid #e532a0;
+  box-sizing: border-box;
+}
+
+.title{
+  height: 80rpx;
+  width: 100%;
+  background: white;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #e4e4e4;
+  border-top: 2rpx solid #e4e4e4;
+}
+
+.title>view{
+  width: 25%;
+  line-height: 80rpx;
+}
+
+.null{
+  margin: 120rpx auto 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #cccccc;
+}
+
+.null>image{
+  width: 240rpx;
+  height: 250rpx;
+  margin: 30rpx 0 40rpx;
+}
+
+.tableLine{
+  border-bottom: 1px solid #e4e4e4;
+  color: #666;
+  font-size: 26rpx;
+  text-align: center
+}
+
+.tableLine>view{
+  width: 25%;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-right: 1rpx solid #e4e4e4;
+  overflow: hidden;
+}

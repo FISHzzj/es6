@@ -1,0 +1,38 @@
+<!--pages/dial/record.wxml-->
+<view class='prize' wx:for="{{list}}" wx:key="index" bindtap='fillIn' data-id='{{item.id}}' data-status='{{item.status}}'>
+  <view class='title flex flex-jcsb flex-ver'>
+    <span>{{item.title}}</span>
+    {{item.status}}
+  </view>
+  <view class='flex flex-ver'>
+    <image class='prizeImg' src='{{item.thumb}}'></image>
+    <view>
+      <view class='ell'>奖品名称：{{item.title}}</view>
+      <view>抽奖时间：{{item.createtime}}</view>
+      <view>数量 :{{item.total}} | 价值：￥{{item.money}}</view>
+      <view>有效期至：{{item.endtime}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='mask' wx:if="{{isShow}}"></view>
+
+<!-- 中奖商品窗口 -->
+<view class='popup' wx:if="{{isShow}}">
+  <view>填写信息</view>
+  <form bindsubmit='submit'>
+    <view class='infoLine flex flex-ver'>
+      <span>收件人：</span>
+      <input placeholder='请填写收件人姓名' name="consignee"></input>
+    </view>
+    <view class='infoLine flex flex-ver'>
+      <span>收件地址：</span>
+      <input placeholder='请填写收件地址' name="address"></input>
+    </view>
+    <view class='infoLine flex flex-ver'>
+      <span>手机号码：</span>
+      <input placeholder='请填写收件号码' name="mobile" type='number'></input>
+    </view>
+    <button form-type='submit' class='subBtn' disabled='{{!subBtn}}'>提交</button>
+  </form>
+</view>

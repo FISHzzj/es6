@@ -1,0 +1,153 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.0",
+	"appid": "wx86797379631a719d",
+	"projectname": "newYM",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/member/index/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "订单",
+					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "商店详情",
+					"pathName": "pages/shop/detail/detail",
+					"query": "id=677",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "商家中心",
+					"pathName": "pages/merchant/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "点餐页面",
+					"pathName": "pages/menu/menu",
+					"query": "mid=658&tnum=A2&tid=4",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "附近",
+					"pathName": "pages/search/nearby",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "订单支付",
+					"pathName": "pages/pay/pay",
+					"query": "orderid=7252",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "确认订单",
+					"pathName": "pages/shop/detail/orderConfirm",
+					"query": "merchid=731",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "设置",
+					"pathName": "pages/member/set/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息模块",
+					"pathName": "pages/xiaoxi/xiaoxi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "通知消息详情",
+					"pathName": "pages/xiaoxi/tongzhi/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加反馈",
+					"pathName": "pages/xiaoxi/faqifangkui/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "团购报名",
+					"pathName": "pages/xiaoxi/tuangou/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "聊天室",
+					"pathName": "pages/my/chitchat/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

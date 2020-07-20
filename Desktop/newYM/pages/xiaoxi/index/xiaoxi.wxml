@@ -1,0 +1,37 @@
+<!--pages/invitation/invitation.wxml-->
+<view class='flex'>
+  <view class='tabBtn {{type=="0"?"active":""}}' bindtap='tab' data-type="0">
+    <view>消息模块</view>
+  </view>
+  <view class='tabBtn {{type=="1"?"active":""}}' bindtap='tab' data-type="1">
+    <view>反馈信息</view>
+  </view>
+  <view class='tabBtn {{type=="2"?"active":""}}' bindtap='tab' data-type="2">
+    <view>平台通知信息</view>
+  </view>
+</view>
+<view style='height: 20rpx;'></view>
+<block wx:if="{{type=='0'}}">
+  <view class='listItem flex flex-ver flex-jcsb' wx:for="{{list}}" wx:item="{{item}}" wx:key="{{index}}" data-id="{{item.id}}" >
+      <image src='/pages/img/dian.png'></image>
+      <view>{{item.title}}</view>
+      <text>{{item.time}}</text>
+    <!-- <span bindtap="copy" data-code="{{ite.mycode}}">复制</span> -->
+  </view>
+</block>
+<block wx:if="{{type=='1'}}">
+  <view class='listItem flex flex-ver flex-jcsb' wx:for="{{list}}" wx:item="{{item}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="fangkui">
+      <image src='/pages/img/dian.png'></image>
+      <view>{{item.title}}</view>
+      <text>{{item.time}}</text>
+    <!-- <span bindtap="copy" data-code="{{ite.mycode}}">复制</span> -->
+  </view>
+</block>
+<block wx:if="{{type=='2'}}">
+  <view class='listItem flex flex-ver flex-jcsb' wx:for="{{list}}" wx:item="{{item}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="tongzhi" >
+      <image src='/pages/img/dian.png'></image>
+      <view>{{item.title}}</view>
+      <text>{{item.time}}</text>
+    <!-- <span bindtap="copy" data-code="{{ite.mycode}}">复制</span> -->
+  </view>
+</block>

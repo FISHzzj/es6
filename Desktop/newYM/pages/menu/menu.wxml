@@ -1,0 +1,27 @@
+<!--pages/menu/menu.wxml-->
+<view class='shopInfo'>{{shopName}}</view>
+<view class='box flex'>
+  <scroll-view class='classifySide' scroll-y>
+    <view class='ell {{scrollId==item.id?"act":""}}' wx:for="{{classList}}" data-id='{{item.id}}' wx:key="index" bindtap='classTab'>{{item.name}}</view>
+  </scroll-view>
+  <scroll-view class='goodsList' scroll-y scroll-into-view="index{{scrollId}}" scroll-top="{{scrollTop}}" scroll-with-animation bindscroll="scroll">
+    <view class='classBox' id='index{{item.id}}' wx:for="{{goodsList}}" wx:key="index">
+      <view class='title'>{{item.title}}</view>
+      <view class='goods flex' wx:for="{{item.goods}}" wx:for-item="goods" wx:key="*this">
+        <image src='{{goods.thumb}}'></image>
+        <view class='goodsInfo'>
+            <view class='goodsTitle ell'>{{goods.title}}商品名称</view>
+            <view>销量：{{goods.showsales==1?goods.salesreal+goods.sales:goods.salesreal}}</view>
+            <view class='price'>￥{{goods.price}}0.01</view>
+            <image src='/static/images/icon-red/cart.png' bindtap='add' data-goodsid='{{item.id}}'></image>
+        </view>
+      </view>
+    </view>
+    <view style='height: 100rpx;'></view>
+  </scroll-view>
+</view>
+
+<cover-view class='cart flex flex-ver flex-jcsb' wx:if="{{cartInfo.sumtotal>0}}">
+  总价： ￥{{cartInfo.summarketprice}} 数量： {{cartInfo.sumtotal}}
+  <cover-view bindtap='toCart' data-merchid='{{merchid}}'>去下单</cover-view>
+</cover-view>

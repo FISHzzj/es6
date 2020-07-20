@@ -1,0 +1,84 @@
+/* pages/my/account/account.wxss */
+page{
+  background: #f5f5f5;
+}
+
+.headImg{
+  background: white;
+  height: 122rpx;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 28rpx;
+  color: #a3a3a3;
+  padding: 0 36rpx 0 24rpx;
+  box-sizing: border-box;
+}
+
+.headImg>image{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 40rpx;
+}
+
+.arrows{
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #a3a3a3;
+  border-style: solid;
+  transform: rotate(45deg);
+}
+
+.line{
+  background: white;
+  height: 82rpx;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 28rpx;
+  color: #a3a3a3;
+  padding: 0 36rpx 0 24rpx;
+  box-sizing: border-box;
+}
+
+.title{
+  color: #333;
+}
+
+.compileImg{
+  background: white;
+  height: 120rpx;
+  padding: 0 36rpx 0 24rpx;
+}
+
+.compileImg>image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 6rpx;
+}
+
+.button{
+  width: 90%;
+  height: 70rpx;
+  background: #e532a0;
+  color: white;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+  margin: 40rpx auto;
+  font-size: 28rpx;
+}
+
+.compileInput{
+  background: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.inputBox{
+  padding: 0 36rpx 0 24rpx;
+}
+
+.inputBox>input{
+  padding-left: 18rpx;
+}

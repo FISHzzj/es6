@@ -1,0 +1,47 @@
+<!--pages/Sett_zhuti/Sett_zhuti.wxml-->
+<view class='head_box'>
+  项目详情
+</view>
+<!-- 内容----------------------------------------------- -->
+<form bindsubmit='submit'>
+
+<view class='content_box'>
+  <view class='boxs flex-al-cen'>
+    <text>项目名称</text>
+    <input type='text' name="title" placeholder='请输入项目名称' value='{{names}}'/>
+  </view>
+  <view class='boxs flex-al-cen '>
+    <text>使用时间</text>
+    <picker mode='time' bindchange="sTimeChange" name="starttime" value='{{begin}}'>
+        <view class="picker tlae">
+          {{begin}}
+        </view>
+    </picker>
+    至
+    <picker mode='time' bindchange="dTimeChange" name="dtarttime" value='{{stati}}'>
+        <view class="picker tlae">
+          {{stati}}
+        </view>
+    </picker>
+  </view>
+  <view class='boxs flex-al-cen'>
+    <text>指定金额</text>
+    <input type='digit' name='zhidin' placeholder='0' value='{{zhidin}}'/>
+  </view>
+  <view class='boxs flex-al-cen'>
+    <text>免减金额</text>
+    <input type='digit' placeholder='0.00' name='jine' value='{{jine}}' />
+  </view>
+  <view class='boxs flex-al-cen'>
+    <text>红包(%)</text>
+    <input type='digit' placeholder='0.00' name='hongbao' value='{{hongbao}}'/>
+  </view>
+  <view class='boxs flex-al-cen flex-jusb'>
+    <text>是否启用不参与优惠金额功能</text>
+    <switch name='chec'></switch>
+  </view>
+</view>
+<view class='butt_box'>
+  <button  form-type='submit'>下一步</button>
+</view>
+</form>

@@ -1,0 +1,143 @@
+/* pages/member/tobemerchant/tobemerchant.wxss */
+page{
+  background: #f5f5f5;
+  width: 100%;
+  height: 100%;
+}
+
+.line{
+  position: relative;
+  height: 80rpx;
+  background: white;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.line>image{
+  width: 36rpx;
+  margin: 6rpx 0 0 10rpx;
+}
+
+.line>radio{
+  position: absolute;
+  right: 24rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.line checkbox{
+  position: absolute;
+  right: 24rpx;
+  top: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.buyInfo{
+  height: 100rpx;
+  line-height: 60rpx;
+  color: #333;
+  font-size: 28rpx;
+  padding-left: 24rpx;
+}
+
+radio .wx-radio-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+}
+/* 选中后的 背景样式 */
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: #e532a0;
+}
+/* 选中后的 对勾样式 */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(0.8);
+   -webkit-transform:translate(-50%, -50%) scale(0.8);
+}
+
+checkbox .wx-checkbox-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+}
+/* 选中后的 背景样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: #e532a0;
+}
+/* 选中后的 对勾样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(0.8);
+   -webkit-transform:translate(-50%, -50%) scale(0.8);
+}
+
+.payBtn{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+  background: #e532a0;
+  border-radius: 10rpx;
+  margin: 40rpx auto;
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6)
+}
+
+.protocol{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+  padding: 0 40rpx 40rpx;
+  background: white;
+  z-index: 111;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+}
+
+.protocol>view{
+  color: #333;
+  text-align: center;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+
+.protocol>rich-text{
+  flex: 1;
+  width: 100%;
+  overflow: scroll;
+  font-size: 28rpx;
+  color: #333;
+}

@@ -1,0 +1,50 @@
+/* pages/xiaoxi/faqifangkui/index.wxss */
+.page{
+  font-size: 28rpx;
+}
+.coupon-box{
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  
+}
+.coupon-input{
+  border: 1rpx solid #eee;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+
+}
+.coupon-textarea{
+  border: 1rpx solid #eee;
+  padding: 10rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  width: 100%;
+}
+
+.fabiao{
+  width: 90%;
+  margin: 20rpx auto;
+  background: #E532A0;
+  text-align: center;
+  border-radius: 10rpx;
+  padding: 10rpx 0;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

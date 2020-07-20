@@ -1,0 +1,67 @@
+/* pages/Settledin_xq/Settledin_xq.wxss */
+.boxs{
+  box-sizing: border-box;
+}
+.head_box{
+  width: 100%;
+  height: 60rpx;
+  background: #e5e5e5;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: relative;
+}
+.bianji{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right:48rpx; 
+}
+.content_box view{
+  padding-left: 26rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  font-size: 26rpx;
+}
+.jieguo{
+  color: #888;
+  margin-left: 20rpx;
+}
+.content_eq view{
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.content_eq view image{
+  width: 80rpx;
+  height: 80rpx;
+  background: #f5f5f5;
+  margin-left: 30rpx;
+}
+
+/* 按钮------------------------------ */
+.butt_box{
+  width: 100%;
+  padding: 0 40rpx;
+  /* background: yellow; */
+  margin-bottom: 60rpx;
+  
+}
+.butt_box view{
+  width: 100%;
+  height: 74rpx;
+  background: #e532a0;
+  margin-top: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 74rpx;
+  border: 2rpx solid #e532a0;
+  border-radius: 10rpx;
+}
+.butt_box view:nth-child(2){
+  background: #fff;
+  color: #e532a0;
+
+}

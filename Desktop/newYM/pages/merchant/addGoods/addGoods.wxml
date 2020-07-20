@@ -1,0 +1,249 @@
+<!--pages/addGoods/addGoods.wxml-->
+<view class='header'>
+  <text class='{{tab==1?"active":""}}' bindtap='tab' data-type='1'>餐品</text>
+  <text class='{{tab==2?"active":""}}' bindtap='tab' data-type='2'>酒店</text>
+  <text class='{{tab==0?"active":""}}' bindtap='tab' data-type='0'>其他</text>
+</view>
+<view class='main'>
+  <!-- 餐品 -->
+  <form class='form' wx:if="{{tab==1}}" bindsubmit="mealSubmit">
+    <view class='div'>
+      <view class='p'>商品名称</view>
+      <view class='p must'>
+        <input type='text' name="title"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>单位</view>
+      <view class='p must'>
+        <input type='text' name="unit"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品点餐分类</view>
+      <view class='p'>
+        <picker bindchange="bindPickerChange" value="{{index}}" mode="selector" range="{{classify}}" range-key="name" name="merch_goods_cat">
+          <view class="picker must">
+            当前选择：{{classify[index].name}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品数量</view>
+      <view class='p must'>
+        <input type='number' name="total"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>市场价</view>
+      <view class='p must'>
+        <input type='text' name="marketprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>原价</view>
+      <view class='p'>
+        <input type='text' name="originalprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>成本价</view>
+      <view class='p'>
+        <input type='text' name="costprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品图片</view>
+      <view class='imgBox'>
+        <view class='images' wx:for="{{images}}" wx:key="index">
+          <image src='{{item}}'></image>
+          <span bindtap="del" data-index="{{index}}">x</span>
+        </view>
+        <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image'></image>
+      </view>
+    </view>
+    <view class='div detail'>
+      <view class='p'>商品详情</view>
+      <view class='p must'>
+        <textarea auto-height placeholder="商品详情" name="description"></textarea>
+      </view>
+    </view>
+    <div style='height:100rpx;'></div>
+    <button class='submitBtn' form-type='submit'>提交商品</button>
+  </form>
+  <!-- 酒店 -->
+  <form class='form' wx:elif="{{tab==2}}" bindsubmit='hotelSubmit'>
+    <view class='div'>
+      <view class='p'>商品名称</view>
+      <view class='p must'>
+        <input type='text' name="title"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>单位</view>
+      <view class='p must'>
+        <input type='text' name="unit"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品数量</view>
+      <view class='p must'>
+        <input type='number' name="total"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>市场价</view>
+      <view class='p must'>
+        <input type='text' name="marketprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>原价</view>
+      <view class='p'>
+        <input type='text' name="originalprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>成本价</view>
+      <view class='p'>
+        <input type='text' name="costprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品图片</view>
+      <view class='imgBox'>
+        <view class='images' wx:for="{{images}}" wx:key="index">
+          <image src='{{item}}'></image>
+          <span bindtap="del" data-index="{{index}}">x</span>
+        </view>
+        <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image'></image>
+      </view>
+    </view>
+    <view class='div detail'>
+      <view class='p'>商品详情</view>
+      <view class='p must'>
+        <textarea auto-height placeholder="商品详情" name="description"></textarea>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>酒店床型</view>
+      <view class='p must'>
+        <input type='text' name="housetype"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>上网方式</view>
+      <view class='p must'>
+        <input type='text' name="internet"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>可住</view>
+      <view class='p must'>
+        <input type='number' name="live_num"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>面积</view>
+      <view class='p must'>
+        <input type='number' name="area"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>早餐</view>
+      <view class='p must'>
+        <input type='text' name="breakfast"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>窗户</view>
+      <view class='p must'>
+        <input type='text' name="window"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>卫浴</view>
+      <view class='p must'>
+        <input type='text' name="bathroom"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>条件筛选</view>
+      <view class='p must'>
+        <checkbox-group name="hotel_condition">
+          <label class="checkbox">
+            <checkbox value="1"></checkbox>含早
+            <checkbox value="2"></checkbox>大床
+            <checkbox value="3"></checkbox>双床
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class='div detail'>
+      <view class='p'>入住规则</view>
+      <view class='p must'>
+        <textarea auto-height placeholder="入住规则" name="live_rule" />
+      </view>
+    </view>
+    <block style='height:100rpx;'></block>
+    <button class='submitBtn' form-type='submit'>提交商品</button>
+  </form>
+  <!-- 其他 -->
+  <form class='form' wx:else bindsubmit='orderSubmit'>
+    <view class='div'>
+      <view class='p'>商品名称</view>
+      <view class='p must'>
+        <input type='text' name="title"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>单位</view>
+      <view class='p must'>
+        <input type='text' name="unit"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品数量</view>
+      <view class='p must'>
+        <input type='number' name="total"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>市场价</view>
+      <view class='p must'>
+        <input type='text' name="marketprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>原价</view>
+      <view class='p'>
+        <input type='text' name="originalprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>成本价</view>
+      <view class='p'>
+        <input type='text' name="costprice"></input>
+      </view>
+    </view>
+    <view class='div'>
+      <view class='p'>商品图片</view>
+      <view class='imgBox'>
+        <view class='images' wx:for="{{images}}" wx:key="index">
+          <image src='{{item}}'></image>
+          <span bindtap="del" data-index="{{index}}">x</span>
+        </view>
+        <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image'></image>
+      </view>
+    </view>
+    <view class='div detail'>
+      <view class='p'>商品详情</view>
+      <view class='p must'>
+        <textarea auto-height placeholder="商品详情" name="description" />
+      </view>
+    </view>
+    <div style='height:100rpx;'></div>
+    <button class='submitBtn' form-type='submit'>提交商品</button>
+  </form>
+</view>

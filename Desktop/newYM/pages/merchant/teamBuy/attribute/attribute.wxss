@@ -1,0 +1,78 @@
+/* pages/attribute/attribute.wxss */
+.text_box{
+  width: 100%;
+  height: 60rpx;
+  background: #e5e5e5;
+  text-align: center;
+  color: #000;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+.contempt_box view{
+  width: 100%;
+  display: flex;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  color: #535353;
+  border-bottom: 2rpx solid #eee;
+}
+.contempt_box view input{
+  height: 100%;
+  color: #000;
+}
+.picker{
+  color: #333;
+  font-size: 28rpx;
+}
+.xuanzhe{
+  display: flex;
+  justify-content: space-between;
+}
+.bili{
+  display: flex;
+  align-items: center;
+  padding-right: 0 !important;
+}
+.bili_inpuy{
+  width: 80rpx;
+  height: 60rpx !important;
+  border: 2rpx solid #eee;
+}
+.bili_text{
+  margin-left: 20rpx;
+  color: #818181 !important;
+}
+.wx-switch-input{
+    width:78rpx !important;
+    height:36rpx !important;
+    background: #0ebeff !important;
+    border: #0ebeff !important; /* 2018-07-18 重置开关边框颜色 */
+}
+.buttan{
+  width: 90%;
+  height: 74rpx;
+  background:#32cd32;
+  margin: 30rpx auto;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 74rpx;
+  border-radius: 10rpx;
+  color: #fff;
+}
+.buttana{
+  background: #e3329f;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+    width:80rpx !important;
+    height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 36rpx !important;
+}

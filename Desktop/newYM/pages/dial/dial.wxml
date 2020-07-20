@@ -1,0 +1,69 @@
+<!--pages/dial/dial.wxml-->
+<view class='top flex flex-jcsb '>
+  <span></span>
+  <view>剩余
+    <span>{{data.surplusnum}} </span> 次抽奖机会</view>
+  <navigator style='width: 160rpx' bindtap='test' url="/pages/dial/record">获奖记录</navigator>
+</view>
+<view class='dialBox'>
+  <view class='catBean'>
+    我的猫豆：
+    <text>{{credit1}}</text>
+  </view>
+  <image class='bg-img' src='http://xt.withubtec.com/addons/wx_shop/template/mobile/default/static/images/cat/cbg.png'></image>
+  <view class='itemBox flex flex-wrap'>
+    <view class='item{{index}} {{select==item.id?"select":""}} flex flex-wrap' wx:for="{{list}}" wx:key="index">
+      <image src='{{item.thumb}}' class='prize'></image>
+      <text>{{item.title}}</text>
+      <view class='start' wx:if="{{index==8}}" bindtap='begin'>
+        立即抽奖
+        <view class='hongbao ell'>￥{{credit1}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='list flex flex-center flex-wrap'>
+  <view>获奖名单</view>
+  <view class='ul'>
+    <view class='li {{rollNum==index?"rollItem":""}}' wx:for="{{data.awards_list}}" wx:key="index">
+      {{item.createtime}} "{{item.nickname}}" 用户抽中0.5元
+    </view>
+  </view>
+</view>
+<view class='rule flex flex-wrap'>
+  抽奖规则
+  <view style='margin-top: 30rpx'>活动时间： 2019-05-06 10:37 至 2020-05-06 10:38</view>
+  <view>参与方法：点击抽奖即可参与。</view>
+</view>
+
+<view class='mask' wx:if="{{isShow}}"></view>
+
+<!-- 中奖商品窗口 -->
+<view class='popup' wx:if="{{isShow}}">
+  <view>奖品列表</view>
+  <scroll-view scroll-y class='prizeBox'>
+    <view class='goods flex' wx:for="{{goods}}" wx:key="index">
+      <image class='prizeImg' src='{{item.thumb}}'></image>
+      <view class='prizeInfo'>
+        <view class='ell'>{{item.title}}</view>
+        <view class='total'>{{item.marketprice}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view>填写信息</view>
+  <form bindsubmit='submit'>
+    <view class='infoLine flex flex-ver'>
+      <span>收件人：</span>
+      <input placeholder='请填写收件人姓名' name="consignee"></input>
+    </view>
+    <view class='infoLine flex flex-ver'>
+      <span>收件地址：</span>
+      <input placeholder='请填写收件地址' name="address"></input>
+    </view>
+    <view class='infoLine flex flex-ver'>
+      <span>手机号码：</span>
+      <input placeholder='请填写收件号码' name="mobile" type='number'></input>
+    </view>
+    <button form-type='submit' class='subBtn' disabled='{{!subBtn}}'>提交</button>
+  </form>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/member/set/index.wxml-->
+<navigator url='/pages/member/withdraw/index' class='line flex flex-jcsb flex-ver'>
+  提现账号
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>
+<navigator url='/pages/member/bind/index' class='line flex flex-jcsb flex-ver'>
+  修改手机
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>
+<navigator url='/pages/my/account/account' class='line flex flex-jcsb flex-ver'>
+  修改密码
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>
+<navigator url='/pages/my/collect/collect' class='line flex flex-jcsb flex-ver'>
+  我的收藏
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>
+<navigator url='/pages/my/question/question' class='line flex flex-jcsb flex-ver'>
+  常见问题
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>
+<navigator url='/pages/my/aboutUs/aboutUs' class='line flex flex-jcsb flex-ver'>
+  关于我们
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>
+<navigator url='/pages/member/account/account' class='line flex flex-jcsb flex-ver' wx:if="{{ismerch==1}}">
+  商家后台账号
+  <view>{{info.username}}</view>
+</navigator>
+<navigator url='/pages/member/set/setKey?account={{info.username}}' class='line flex flex-jcsb flex-ver' wx:if="{{ismerch==1}}">
+  修改商家后台密码
+  <view>
+    <span class="arrows"></span>
+  </view>
+</navigator>

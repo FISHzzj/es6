@@ -1,0 +1,116 @@
+<!--pages/search/hotel.wxml-->
+<!-- 搜索框 -->
+<view class='top flex'>
+  <view class="inputBox flex flex-ver">
+    <image src="/pages/img/search-gray.png"></image>
+    <input placeholder="输入商家名、品类或商圈" placeholder-class="pla" bindfocus="focus"></input>
+  </view>
+    <view class='searchBtn' bindtap='toLocation'>{{city}}</view>
+</view>
+<view style='height:158rpx;'></view>
+
+<view class='mask' bindtap='close' wx:if="{{isMask}}"></view>
+
+<!-- 筛选栏 -->
+<view class='filtrateBox flex'>
+  <view class='flex flex-center {{type=="fujin"?"act":""}}' bindtap='filtrate' data-type='fujin'>附近
+    <span class='triangle {{type=="fujin"?"up":""}}'></span>
+  </view>
+  <view class='flex flex-center {{type=="level"?"act":""}}' bindtap='filtrate' data-type='level'>星级/价格
+    <span class='triangle {{type=="level"?"up":""}}'></span>
+  </view>
+  <view class='flex flex-center {{type=="zhineng"?"act":""}}' bindtap='filtrate' data-type='zhineng'>{{sortType}}
+    <span class='triangle {{type=="zhineng"?"up":""}}'></span>
+  </view>
+</view>
+
+<!-- 智能排序 -->
+<view class='sortBox {{isSort?"showAnimation1":""}}'>
+  <view data-sort='default' bindtap='sort'>智能排序</view>
+  <view data-sort='nearest' bindtap='sort'>距离 近到远</view>
+  <view data-sort='good' bindtap='sort'>评分 高到低</view>
+  <view data-sort='inexpensive' bindtap='sort'>价格 低到高</view>
+  <view data-sort='expensive' bindtap='sort'>价格 高到低</view>
+  <!-- <view data-sort='popularity' bindtap='sort'>人气 高到低</view> -->
+</view>
+
+<!-- 星级/价格 -->
+<view class='levelBox' wx:if="{{isLevel}}">
+  <view class='starBox'>
+    <view>星级</view>
+    <view class='flex flex-jcsb star'>
+      <view bindtap='selectStar' data-star='2' class='{{level==2?"priceAct":""}}'>经济型</view>
+      <view bindtap='selectStar' data-star='3' class='{{level==3?"priceAct":""}}'>三星/舒适</view>
+      <view bindtap='selectStar' data-star='4' class='{{level==4?"priceAct":""}}'>四星/高档</view>
+      <view bindtap='selectStar' data-star='5' class='{{hotel_price==5?"priceAct":""}}'>五星/豪华</view>
+    </view>
+  </view>
+
+  <view>
+    价格
+    <text>{{priceSection}}</text>
+  </view>
+  <view class='priceBox flex flex-wrap'>
+    <view class='{{minPrice==0&&minPrice!=""?"priceAct":""}}' bindtap='selectPrice' data-min="0" data-max='150'>150以下</view>
+    <view class='{{minPrice==150?"priceAct":""}}' bindtap='selectPrice' data-min="150" data-max='300'>150-300</view>
+    <view class='{{minPrice==300?"priceAct":""}}' bindtap='selectPrice' data-min="300" data-max='450'>300-450</view>
+    <view class='{{minPrice==450?"priceAct":""}}' bindtap='selectPrice' data-min="450" data-max='600'>450-600</view>
+    <view class='{{minPrice==600?"priceAct":""}}' bindtap='selectPrice' data-min="600" data-max='1000'>600-1000</view>
+    <view class='{{minPrice==1000?"priceAct":""}}' bindtap='selectPrice' data-min="1000" data-max='2000'>1000以上</view>
+  </view>
+  <view class='btnBox flex'>
+    <view class='reset' bindtap='reset'>重置</view>
+    <view class='fulfill' bindtap='fulfill'>完成</view>
+  </view>
+
+</view>
+
+
+<!-- 区域/街道选择 -->
+<view class='DSBox flex {{isFujin?"showAnimation0":""}}'>
+  <view class='district'>
+    <view class='districtItem'>
+      <span>商圈</span>
+    </view>
+    <view class='districtItem' bindtap='dctSelect' data-code='1' style='{{DCode==1?"color:#a59e9e":""}}'>附近 ></view>
+    <view class='districtItem' bindtap='dctSelect' style='{{DCode==item.code?"color:#a59e9e":""}}' wx:for="{{districtList}}" wx:key="index" data-code='{{item.code}}' data-area='{{item.name}}'>{{item.name}}</view>
+  </view>
+  <view class='streetBox'>
+    <view class='street'></view>
+    <block wx:if="{{DCode==1}}">
+      <view class='street' wx:for="{{nbList}}" wx:key="*this" data-meter='{{item.meter}}' bindtap='stSelect'>{{item.text}}</view>
+    </block>
+    <block wx:else>
+      <view class='street' wx:for="{{streetList}}" wx:key="*this" data-street='{{item}}' bindtap='stSelect'>{{item}}</view>
+    </block>
+  </view>
+</view>
+
+<!-- 酒店列表 -->
+<view class='hotelList' wx:if="{{shopList.length>0}}">
+  <navigator url='/pages/goods/hotelDetail/hotelDetail?merchid={{item.id}}' class='hotelItem flex' wx:for="{{shopList}}" wx:key="index" data-id='{{item.id}}'>
+    <image src='{{item.logo}}'></image>
+    <view class='infoBox'>
+      <view class='title'>{{item.merchname}}</view>
+      <view class='pingfen'>
+        <view class='grade'>{{item.start}}</view>
+        <text>评分</text> {{item.commentcount}}条评论 | 豪华型
+      </view>
+      <view>距您直线{{item.distance_um}}</view>
+      <view class='flex'>
+        <view class='price'>￥
+          <text>{{item.hotel_price}}</text>
+        </view>起
+        <view>生活服务 | 其他</view>
+      </view>
+      <view class='intro'>“{{item.introduction}}”</view>
+    </view>
+  </navigator>
+</view>
+
+
+<!-- 数据为空时显示 -->
+<view class='null' wx:else>
+  <image src='/pages/img/search_list.png'></image>
+  <view>暂时没有任何记录!</view>
+</view>

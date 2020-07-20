@@ -1,0 +1,18 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view class='aboutUs'>
+  <view class='head'>
+    <view>
+      <image src='/pages/img/avart.png'></image>
+    </view>
+    <view>
+      <text>野猫精彩</text>
+      <text>1.2.1</text>
+    </view>
+  </view>
+  <view class='info'>
+    野猫精彩，是2017年3月18日成立的团购平台。野猫精彩有着“吃喝玩乐全上野猫”的宣传口号。为消费者发现最值得信赖的商家，让消费者享受超低折扣的优质服务；为商家找到最合适的消费者，给商家提供最大收益的互联网推广 。 野猫精彩是广州野猫网络科技有限公司出品的一款移动团购软件，集合美食、电影、酒店、KTV、外卖、到家、到店付、储值卡等一系列本地生活服务，给用户提供优质、便捷的优惠服务。
+  </view>
+  <view class='copyRight'>
+    Copyright ©2017 广州野猫网络科技有限公司
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<!--pages/list/list.wxml-->
+<!-- 标头-------------------------- -->
+<view class='text_box'>
+  <view class='{{tabType==""?"act":""}}' bindtap='tab' data-type=''>全部</view>
+  <view class='{{tabType=="-1"?"act":""}}' bindtap='tab' data-type='-1'>待审核</view>
+  <view class='{{tabType=="1"?"act":""}}' bindtap='tab' data-type='1'>已上架</view>
+  <view class='{{tabType=="2"?"act":""}}' bindtap='tab' data-type='2'>已下架</view>
+</view>
+<!-- 列表内容--------------------------------- -->
+<view class='content_box'>
+  <view class='content_div' wx:for="{{list}}" wx:key="index">
+    <view class='content_left'>
+      <view>
+        <span class="black" style="margin-right: 26rpx;">{{item.title}}</span>{{item.type=="1"?"团购买单":""}}</view>
+      <view class='content_state'>
+        <view>{{item.checked=="1"?"已审核":"待审核"}}</view>
+        <view>{{item.status=="1"?"已上架":"未上架"}}</view>
+      </view>
+      <view class='conten_nume'>
+        <view>已售
+          <span class="black">{{item.sold}}</span>
+        </view>
+        <view>已用
+          <span class="black">{{item.used}}</span>
+        </view>
+        <view>已退
+          <span class="black">{{item.salesreturn}}</span>
+        </view>
+      </view>
+    </view>
+    <view class='content_right'>
+      <view bindtap='delet' data-id='{{item.id}}'>删除</view>
+      <view>
+        <navigator url='/pages/merchant/teamBuy/attribute/attribute?id={{item.id}}' open-type="redirect">编辑</navigator>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='height: 110rpx;'></view>
+<navigator url='/pages/merchant/teamBuy/pName/pName' open-type="redirect">
+  <view class='newBtn flex flex-center'>
+    <image src='/static/images/icon-white/add.png'></image>新建项目
+  </view>
+</navigator>

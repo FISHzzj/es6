@@ -1,0 +1,142 @@
+<!--pages/Settledin_xq/Settledin_xq.wxml-->
+<view>
+  <view class='head_box boxs'>
+      <text>主体信息</text>
+      <navigator url='/pages/merchant/enter/Sett_zhuti/Sett_zhuti' class='bianji'>编辑</navigator>
+  </view>
+  <view class='content_box boxs'>
+    <view>
+      <text>主体类型</text>
+      <text class='jieguo'>{{zhuti.miantype}}</text>
+    </view>
+    <view>
+      <text>个体名称</text>
+      <text class='jieguo'>{{zhuti.unitname}}</text>
+    </view>
+    <view>
+      <text>营业者</text>
+      <text class='jieguo'>{{zhuti.operator}}</text>
+    </view>
+    <view>
+      <text>统一社会信用代码</text>
+      <text class='jieguo'>{{zhuti.socialcode}}</text>
+    </view>
+    <view>
+      <text>结算方式</text>
+       <text class='jieguo'>{{zhuti.alipaytype}}</text>
+    </view>
+    <view>
+      <text>结算账户</text>
+      <text class='jieguo'>{{zhuti.alipaynum}}</text>
+    </view>
+  </view>
+</view>
+<!-- 门店信息-------------------------------------------- -->
+<view>
+  <view class='head_box boxs'>
+      <text>门店信息</text>
+      <navigator url='/pages/merchant/enter/Sett_mengdian/Sett_mengdian?type=1' class='bianji'>编辑</navigator>
+  </view>
+  <view class='content_box boxs'>
+    <view>
+      <text>门店类型</text>
+      <text class='jieguo'>{{mendian.categoryname}}</text>
+    </view>
+    <view>
+      <text>门店名称</text>
+      <text class='jieguo'>{{mendian.storename}}</text>
+    </view>
+    <view>
+      <text>门店电话</text>
+      <text class='jieguo'>{{mendian.storephone}}</text>
+    </view>
+    <view>
+      <text>门店区域</text>
+      <text class='jieguo'>{{mendian.area}}</text>
+    </view>
+    <view>
+      <text>门店地址</text>
+      <text class='jieguo'>{{mendian.store_address}}</text>
+    </view>
+  </view>
+</view>
+<!-- 主体证件-------------------------------------------- -->
+<view>
+  <view class='head_box boxs'>
+      <text>主体证照 </text>
+      <navigator url='/pages/merchant/enter/Sett_zhenjian/Sett_zhenjian' class='bianji'>编辑</navigator>
+  </view>
+  <view class='content_box content_eq boxs'>
+    <view>
+      <text>营业执照副本</text>
+      <image src='{{zhengzhao.businesslicense_img}}'></image>
+    </view>
+    <view>
+      <text>特许经营许可证</text>
+      <image src='{{zhengzhao.businesscertificate_img}}'></image>
+    </view>
+    <view>
+      <text>法人身份证正面</text>
+      <image src='{{zhengzhao.idcard_front_img}}'></image>
+    </view>
+    <view>
+      <text>法人身份证反面</text>
+      <image src='{{zhengzhao.idcard_back_img}}'></image>
+    </view>
+    <view>
+      <text>开户许可证</text>
+      <image src='{{zhengzhao.promiseopen_img}}'></image>
+    </view>
+    <view>
+      <text>其他资料</text>
+      <image src='{{zhengzhao.else_image}}'></image>
+    </view>
+  </view>
+</view>
+<!-- 项目详情-------------------------------------------- -->
+<view>
+  <view class='head_box boxs '>
+      <text>项目详情</text>
+      <navigator url='/pages/merchant/enter/Sett_xianmu/Sett_xianmu' class='bianji'>编辑</navigator>
+  </view>
+  <view class='content_box  boxs'>
+    <view>
+      <text>项目名称</text>
+      <text class='jieguo'>{{xiangmu.youhuiname}}</text>
+    </view>
+    <view>
+      <text>项目时间</text>
+      <text class='jieguo'>{{xiangmu.starttime}}-{{xiangmu.endtime}}</text>
+    </view>
+    <view>
+      <text>指定金额</text>
+       <text class='jieguo'>{{xiangmu.moneyappoint}}</text>
+    </view>
+    <view>
+      <text>免减金额</text>
+      <text class='jieguo'>{{xiangmu.removemoney}}</text>
+    </view>
+    <view>
+      <text>野猫红包</text>
+      <text class='jieguo'>{{xiangmu.redpackey}}</text>
+    </view>
+    <view>
+      <text>是否启用不参与优惠金额功能</text>
+      <text class='jieguo'>{{xiangmu.isremove==0?"否":"是"}}</text>
+    </view>
+  </view>
+</view>
+<!-- 授权码-------------------------------------------- -->
+<view>
+  <view class='head_box boxs '>
+      <text>授权码</text>
+      <navigator url='/pages/merchant/enter/Sett_shouquan/Sett_shouquan' class='bianji'>编辑</navigator>
+  </view>
+  <view class='content_box  boxs'>
+    <view>
+      <text>授权码</text>
+    </view>
+  </view>
+</view>
+
+<view style='height:30rpx'></view>

@@ -1,0 +1,19 @@
+<!--pages/billingDetails/billingDetails.wxml-->
+<view class='billingDetails'>
+    <!-- 表头 -->
+    <view class='header'>
+        <text>结算时间</text>
+        <text>计算状态</text>
+        <text>结算金额</text>
+        <text>实结金额</text>
+    </view>
+    <!-- 主内容 -->
+    <view class='main'>
+        <navigator url='/pages/merchant/billingDetails/journal?time={{item.createtime}}' class='content' wx:for="{{list}}" wx:key="index">
+            <text>{{item.day}}</text>
+            <text>{{item.status==1?"已转账":"失败"}}</text>
+            <text>{{item.price}}</text>
+            <text>{{item.price}}</text>
+        </navigator>
+    </view>
+</view>

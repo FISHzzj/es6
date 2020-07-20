@@ -1,0 +1,158 @@
+/* pages/member/cart/cart.wxss */
+page{
+  height: 100%;
+  background: #f5f5f5;
+  border-top: 1px solid rgba(0,0,0,0);
+  box-sizing: border-box;
+}
+
+.check-icon{
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  border: 1px solid #dfdfdf;
+  margin-right: 16rpx;
+}
+
+image.checkIcon{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 16rpx;
+}
+
+.shopIcon{
+  width: 34rpx;
+  padding:  0 6rpx;
+}
+
+.shopBox{
+  background: white;
+  padding: 16rpx 24rpx 0;
+}
+
+.title{
+  width: 100%;
+  height: 70rpx;
+  color: #666;
+  font-size: 28rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.title>navigator{
+  flex: 1;
+}
+
+.title>navigator span{
+  display: inline-block;
+  float: right;
+  width: 16rpx;
+  height: 16rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #b2b2b2;
+  border-style: solid;
+  transform: rotate(45deg);
+  margin: 10rpx 6rpx 0 0;
+}
+
+.goods{
+  padding: 26rpx 0 40rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.goodsImg{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 24rpx 0 0rpx;
+}
+
+.goodsImg+view{
+  flex:1
+}
+
+.goodsTitle{
+  width: 400rpx;
+  color: #333;
+  font-size: 28rpx;
+  margin-bottom: 80rpx;
+}
+
+.price{
+  width: 100%;
+  height: 44rpx;
+  line-height: 44rpx;
+  color: #ff5555;
+  font-size: 28rpx;
+}
+
+.numBtn{
+  width: 52rpx;
+  height: 44rpx;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 42rpx;
+  color: #666;
+}
+
+.num{
+  font-size: 28rpx;
+  color: #666;
+  border: 1px solid #d9d9d9;
+  height: 40rpx;
+  line-height: 44rpx;
+  width: 56rpx;
+  text-align: center;
+}
+
+.bottom{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  bottom: 0;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  background: white;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.edit{
+  float: right;
+  padding: 0 46rpx;
+  height: 100%;
+  background: #ffa800;
+  line-height: 100rpx;
+  text-align: center;
+  color: white;
+}
+
+.button{
+  float: right;
+  height: 100%;
+  padding: 0 46rpx;
+  background: #ff5555;
+  color: white;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.orderInfo{
+  float: right;
+  padding-right: 20rpx;
+  text-align: right;
+}
+
+.orderInfo>view{
+  color: #333;
+  margin-top: 16rpx;
+}
+
+.orderInfo>view>text{
+  color: #ff5555;
+
+}
+
+.orderInfo>span{
+  color: #999;
+  font-size: 24rpx;
+}

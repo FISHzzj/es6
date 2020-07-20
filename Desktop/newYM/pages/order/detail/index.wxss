@@ -1,0 +1,40 @@
+page{
+  background: #f3f3f3;
+}
+
+.shopInfo{
+  background: white;
+  padding: 0 24rpx;
+  margin-bottom: 10rpx;
+}
+
+.title{
+  height: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.infoLine{
+  height: 76rpx;
+  font-size: 24rpx;
+  color: #888888;
+  border-top: 2rpx solid #e5e5e5;
+  /* padding: 0 rpx; */
+}
+
+.infoLine>image{
+  height: 24rpx;
+  width: 22rpx;
+  padding: 0 24rpx;
+}
+
+.orderInfo{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #888888;
+  padding: 0 44rpx;
+}

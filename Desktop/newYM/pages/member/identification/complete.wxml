@@ -1,0 +1,25 @@
+<!--pages/member/identification/complete.wxml-->
+<view class='top flex flex-center flex-ver'>
+  <image src='/static/images/icon-red/complete(1).png'></image>
+  恭喜你，认证通过
+</view>
+<view style="color:#333;padding-left: 24rpx;font-size:28rpx;line-height:76rpx;">
+  实名信息
+</view>
+<view class='line flex flex-ver'>
+  <text>真实姓名</text> {{info.irealname}}
+</view>
+<view class='line flex flex-ver'>
+  <text>身份证号</text> {{info.iidcard}}
+</view>
+<view class='line flex flex-ver'>
+  <text>所属区域</text> {{info.iprovince}}，{{info.icity}}，{{info.iarea}}
+</view>
+<view class='line flex flex-ver'>
+  <text>性别</text> {{info.isex}}
+</view>
+<view class='line flex flex-ver'>
+  <text>生日</text> {{info.ibirthday}}
+</view>
+
+<navigator class='back' url='/pages/member/index/index' open-type='switchTab'>返回我的</navigator>

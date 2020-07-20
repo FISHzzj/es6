@@ -1,0 +1,175 @@
+/* pages/homePage/homePage.wxss */
+
+.top {
+  position: relative;
+  height: 700rpx;
+  width: 100%;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(142deg, rgba(175,103,244, 1) 0%, rgba(214,116,246, 1) 100%);
+  color: white;
+  margin-bottom: 80rpx;
+}
+.topdizhi{
+  padding: 0 34rpx;
+  box-sizing: border-box;
+}
+.top>view:first-child{
+  line-height: 50px;
+  text-align: center;
+  padding-top: 40rpx;
+  font-size: 32rpx;
+
+}
+
+.top navigator:first-child{
+  display: inline-block;
+}
+
+.top navigator:first-child image{
+  width: 36rpx;
+  height: 44rpx;
+  margin-right: 10rpx;
+}
+
+.topBtn {
+  display: inline-flex;
+  width: 196rpx;
+  height: 54rpx;
+  background:rgba(243,243,243,0.8);
+  border-radius: 28rpx; 
+  color: #A3A3A3
+}
+
+
+.topBtn image {
+  width: 22rpx;
+  height: 22rpx;
+  padding-right: 8rpx;
+}
+
+.toplist{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.toplist>view{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.toplist>view>image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.banner {
+  position: relative;
+  height: 400rpx;
+  width: 100%;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal{
+  position:absolute;
+  bottom: -30rpx
+}
+
+.banner>swiper-item {
+  height: 100%;
+  width: 100%;
+}
+
+.banner image {
+  height: 100%;
+  width: 100%;
+}
+.bannerTwo{
+  height: 232rpx;
+  width: 686rpx;
+  margin: 10rpx auto;
+}
+.bannerTwo>swiper-item {
+  height: 100%;
+  width: 100%;
+}
+
+.bannerTwo image {
+  height: 100%;
+  width: 100%;
+}
+
+.infoBox{
+  
+}
+
+.classifyBox {
+  width: 100%;
+  overflow: hidden;
+}
+
+.classifyBtn {
+  float: left;
+  width: 20%;
+  height: 164rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #a7a7a7;
+}
+
+.classifyBtn>image {
+  width: 70rpx;
+  height: 70rpx;
+  padding: 20rpx 0 16rpx;
+}
+
+.recommend {
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  color: #c9c9c9;
+  font-size: 24rpx;
+  border-top: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.shopList {
+  padding: 0 30rpx;
+}
+
+.shopItem {
+  padding: 24rpx;
+  border-bottom: 4rpx solid #ebebeb;
+}
+
+.shopImg {
+  display: block;
+  width: 170rpx;
+  height: 168rpx;
+}
+
+.shopInfo {
+  padding-left: 56rpx;
+  color: #909090;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  flex-grow: 1;
+}
+
+.shopInfo>view {
+  height: 44rpx;
+}
+
+.shopName {
+  width: 410rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  font-size: 28rpx;
+}
+
+.shopInfo image {
+  width: 24rpx;
+  height: 24rpx;
+}

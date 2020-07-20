@@ -1,0 +1,18 @@
+<!--pages/invitation/invitation.wxml-->
+<view class='flex'>
+  <view class='tabBtn {{type=="0"?"active":""}}' bindtap='tab' data-type="0">
+    <view>未使用邀请码</view>
+    <view>{{unused}}个</view>
+  </view>
+  <view class='tabBtn {{type=="1"?"active":""}}' bindtap='tab' data-type="1">
+    <view>已使用邀请码</view>
+    <view>{{used}}个</view>
+  </view>
+</view>
+<view style='height: 20rpx;'></view>
+<view class='listItem flex flex-ver' wx:for="{{list}}" wx:key="{{index}}">
+    <image src='/pages/img/dian.png'></image>
+    <view>{{item.mycode}}</view>
+    <text>({{item.isuse==0?item.creattime:item.usetime}})</text>
+  <span bindtap="copy" data-code="{{ite.mycode}}">复制</span>
+</view>

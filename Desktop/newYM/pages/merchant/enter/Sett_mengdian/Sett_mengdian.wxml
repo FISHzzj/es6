@@ -1,0 +1,63 @@
+<!--pages/Sett_mengdian/Sett_mengdian.wxml-->
+<view class='hade_box'>门店信息</view>
+<!-- 轮播图 -->
+<swiper class='swiper_box' autoplay interval="2500" circular="true" bindtap='toUpload'>
+  <swiper-item wx:for="{{banner}}" wx:key="index">
+    <image src="{{item}}" class="slide-image"></image>
+  </swiper-item>
+</swiper>
+  <view class='addBox flex flex-ver flex-center' catchtap='toUpload' wx:if="{{banner.length==0}}">
+    <image src='/static/images/icon/add.png'></image>
+  </view>
+<form bindsubmit='submit'>
+  <view class='content_box'>
+    <view class='content_div'>
+      <text>商家简介</text>
+      <input class='vle_input' type='text' value='{{memberInfo.introduction}}' placeholder='请输入商家信息' name="introduction" data-name='introduction' bindinput='formChange'></input>
+    </view>
+    <view class='content_div'>
+      <text>行业类别</text>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" range="{{cList}}" range-key='value' name="category" data-name='category' value='{{category}}'>
+        <view class="picker">
+          {{cList[0][parentIndex].value}},{{cList[1][childIndx].value}}
+        </view>
+      </picker>
+    </view>
+    <view class='content_div'>
+      <text>店门名称</text>
+      <input class='vle_input' type='text' placeholder='请输入商家信息' name="storename" data-name='storename' value='{{memberInfo.storename}}'></input>
+    </view>
+    <view class='content_div'>
+      <text>店门电话</text>
+      <input class='vle_input' type='number' placeholder='请输入商家信息' name="storephone" data-name='storephone' value='{{member.storephone}}'></input>
+    </view>
+    <view class='content_div'>
+      <text>店门区域</text>
+      <picker mode="region" bindchange="bindRegionChange" value="请选择地址" custom-item="{{customItem}}" name="area" data-name='area'>
+        <view class="picker">
+          {{region}}
+        </view>
+      </picker>
+    </view>
+    <view class='content_div'>
+      <text>所在城镇</text>
+      <input class='vle_input' type='text' placeholder='请输入所在城镇/街道' name="store_town" data-name='store_town' value='{{town}}'></input>
+    </view>
+    <view class='content_div flex-wrap'>
+      <text>店门地址</text>
+      <input class='vle_input' type='text' placeholder='请输入商家信息' name="store_address" data-name='store_address' value='{{member.store_address}}'></input>
+      <!-- <button bindtap='searchAddress'>搜索</button> -->
+    </view>
+    <view class='content_div'>
+      <text>地图标注</text>
+      <text style='padding-left: 20rpx;'>纬度：{{location.lat}}，经度：{{location.lng}}</text>
+    </view>
+  </view>
+  <!-- 地图 -->
+  <map class='ditu_box' longitude="{{location.lng}}" latitude="{{location.lat}}" show-location bindtap="mapMove">
+
+  </map>
+  <!-- <button open-type='getUserInfo' bindgetphonenumber="clgInfo">lll</button> -->
+  <button class='butt_box' form-type='submit' wx:if="{{type==1}}">下一步</button>
+  <button class='butt_box' form-type='submit' else>保存</button>
+</form>

@@ -1,0 +1,33 @@
+<!--pages/member/tobemerchant/tobemerchant.wxml-->
+<radio-group bindchange="radioChange">
+  <view style='line-height:80rpx;text-align:center;color:#333;font-size: 28rpx;'>选择推广商类型</view>
+  <view class='line flex flex-ver'>推广商
+    <image src='/static/images/icon/level.png' mode='widthFix'></image>
+    <radio color="#e532a0" name="tgs" value='tgs'></radio>
+  </view>
+  <view class='buyInfo'>￥{{tgsgoods.money}} 获得{{tgsgoods.tzcodenum}}个授权码</view>
+  <view class='line flex flex-ver'>微区合伙人
+    <image src='/static/images/icon/level.png' mode='widthFix'></image>
+    <radio color="#e532a0" name="wequ" value='wequ'></radio>
+  </view>
+  <view class='buyInfo'>￥{{wqgoods.money}} 获得{{wqgoods.tzcodenum}}个授权码</view>
+  <view class='line flex flex-ver' wx:if="{{authorization!=''}}">授权码
+    <image src='/static/images/icon/level.png' mode='widthFix'></image>
+    <radio color="#e532a0" name="dange" value='dange'></radio>
+  </view>
+  <view class='buyInfo' wx:if="{{authorization!=''}}">￥{{authorization.authorization_price}} 获得{{authorization.authorization_status}}个授权码</view>
+</radio-group>
+<view class='line flex flex-ver' wx:if="{{protocolTitle!=''}}">
+  <text bindtap='check'>阅读{{protocolTitle}}</text>
+  <checkbox-group bindchange="checkboxChange">
+    <checkbox color="#e532a0" value='ck'></checkbox>
+  </checkbox-group>
+</view>
+<view class='payBtn' bindtap='pay'>支付</view>
+
+<view class='mask' wx:if="{{isShow}}" bindtap='close'></view>
+
+<view class='protocol' wx:if="{{isShow}}">
+  <view>{{protocolTitle}}</view>
+  <rich-text nodes="{{richData}}"></rich-text>
+</view>

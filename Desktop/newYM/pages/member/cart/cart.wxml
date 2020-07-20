@@ -1,0 +1,60 @@
+<!--pages/member/cart/cart.wxml-->
+<!-- 数据为空时显示 -->
+<view class='null' wx:if="{{cartList==null}}">
+  <image src='/pages/img/search_list.png'></image>
+  <view>暂时没有任何记录!</view>
+</view>
+
+
+<view class='shopBox' wx:for="{{cartList}}" wx:key="index" data-index='{{index}}' wx:if="{{cartList.length>0}}">
+  <view class='title flex flex-ver'>
+    <image class='checkIcon' src='/static/images/icon/check-icon.png' bindtap='check' data-type='shop' wx:if="{{item.selected}}" data-checked='{{item.selected}}' data-id="{{item.merchid}}" data-index="{{index}}"></image>
+    <check-icon class='check-icon' wx:else data-type='shop' bindtap='check' data-index="{{index}}" data-id="{{item.merchid}}" data-checked='{{item.selected}}'></check-icon>
+    <image src='/static/images/icon/store.png' class='shopIcon' mode="widthFix"></image>
+    <navigator class='flex flex-jcsb' open-type="redirect" url='/pages/shop/detail/detail?id={{item.merchid}}'>
+      {{item.merchname}}
+      <span></span>
+    </navigator>
+  </view>
+  <!-- 商品列表 -->
+  <view class='goodsList'>
+    <view class='goods flex flex-ver' wx:for="{{item.list}}" wx:key="*this" wx:for-item="goods">
+      <image class='checkIcon' src='/static/images/icon/check-icon.png' data-type="goods" wx:if="{{goods.selected==1}}" data-id='{{goods.id}}' data-checked='{{goods.selected}}' bindtap='check'></image>
+      <check-icon class='check-icon' wx:else data-id='{{goods.id}}' data-type="goods" data-checked='{{goods.selected}}' bindtap='check'></check-icon>
+      <image src='{{goods.thumb}}' class='goodsImg'></image>
+      <view>
+        <view class='goodsTitle mell'>{{goods.title}}</view>
+        <view class='price flex flex-jcsb'>
+          ￥{{goods.marketprice}}
+          <view class='flex flex-ver'>
+            <view class='numBtn' bindtap='minus' data-id='{{goods.id}}' data-total='{{goods.total}}' data-index='{{index}}' data-min='{{goods.minbuy}}'>-</view>
+            <view class='num'>{{goods.total}}</view>
+            <view class='numBtn' bindtap='plus' data-total='{{goods.total}}' data-max='{{goods.totalmaxbuy}}' data-stock='{{goods.stock}}' data-id='{{goods.id}}' data-index='{{index}}'>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view style='height:100rpx;'></view>
+
+
+<view class='bottom'>
+  <view class='flex flex-ver' style='position:absolute;height:100%;padding-left:24rpx;'>
+    <image class='checkIcon' src='/static/images/icon/check-icon.png' wx:if="{{ischeckall}}" data-type='all' bindtap='check'></image>
+    <view class='check-icon' wx:else data-type='all' bindtap='check'></view>
+    全选
+  </view>
+  <view class='button' style='{{goodsIdList.length>0?"":"background:#ccc"}}' wx:if="{{!isEdit}}" bindtap="toCreate">去下单({{total}})</view>
+  <view class='edit' bindtap='complete' wx:else>完成</view>
+  <view class='edit' bindtap='edit' wx:if="{{!isEdit}}">编辑</view>
+  <view class='button' bindtap='delet' style='{{goodsIdList.length>0?"":"background:#ccc"}}' wx:else>删除</view>
+  <view class='orderInfo' wx:if="{{!isEdit}}">
+    <view>合计：
+      <text>￥{{totalprice}}</text>
+    </view>
+    <span>不含运费</span>
+  </view>
+  <!-- <view class='edit' style='{{goodsIdList.length>0?"":"background:#ccc"}}' wx:else>移到关注</view> -->
+</view>

@@ -1,0 +1,75 @@
+<!--pages/manageData/manageData.wxml-->
+<view class='manageData'>
+  <!--  -->
+  <view class='top'>
+    <view class='li'>
+      <view>昨日浏览量</view>
+      <view>
+        <text>{{info.num}}</text>
+        <text class='setOpacity'> 次</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日销售量</text>
+        <text class='setOpacity'>(买卷)</text>
+      </view>
+      <view>
+        <text>{{info.teambuy}}</text>
+        <text class='setOpacity'> (元)</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日买单量</text>
+        <text class='setOpacity'>(买卷)</text>
+      </view>
+      <view>
+        <text>{{info.youhuipay}}</text>
+        <text class='setOpacity'> (元)</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日消费量</text>
+        <text class='setOpacity'>(买卷)</text>
+      </view>
+      <view>
+        <text>{{info.checkcoupon}}</text>
+        <text class='setOpacity'> (元)</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日退款量</text>
+        <text class='setOpacity'>(买卷)</text>
+      </view>
+      <view>
+        <text>{{info.refund}}</text>
+        <text class='setOpacity'> (元)</text>
+      </view>
+    </view>
+  </view>
+  <navigator url='/pages/merchant/manageData/otherData' class='other'>查看其它数据</navigator>
+  <view class='table'>
+    <view class='tableHead'>
+      <view class='th'>
+        <text>日期</text>
+        <text>营业额</text>
+        <text>销售量</text>
+        <text>浏览量</text>
+      </view>
+    </view>
+    <view class='tableBody'>
+      <view class='tr' wx:for="{{list}}" wx:key="index">
+        <text>{{item.day}}</text>
+        <text>{{item.salesnum}}</text>
+        <text>{{item.income}}</text>
+        <text>{{item.num}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='getMore' bindtap='getMore'>
+    {{moreText}}
+  </view>
+</view>

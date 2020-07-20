@@ -1,0 +1,73 @@
+/* pages/order/order.wxss */
+/* 头部导航 */
+page{
+  background: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    background-color: white;
+    font-size: 0.9rem;
+}
+.header text {
+    flex-grow: 1;
+    display: inline-block;
+    text-align: center;
+    padding: 15rpx 0;
+    position: relative;
+    color: rgba(0, 0, 0, 0.5);
+}
+.header text.active {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+.header text.active::after {
+    content: '';
+    width: 100%;
+    height: 0px;
+    border-bottom: 5rpx solid red;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* 主要 区域 */
+.main .li {
+  padding: 0 20rpx;
+  background-color: white;
+  margin-top: 20rpx;
+}
+.main .li image {
+    width: 35vw;
+    height: 20vw;
+}
+.main .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 0.8rem;
+    margin-bottom: 15rpx;
+}
+.main .top .p:last-child {
+    color: red;
+}
+.main .middle {
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.main .middle .div:last-child {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.3);
+    line-height: 1.8em;
+    margin-left: 20rpx;
+}
+.main .bottom {
+    height: 8vh;
+    line-height: 8vh;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.8); 
+}

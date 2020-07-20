@@ -1,0 +1,20 @@
+<!--pages/my/question/question.wxml-->
+<!-- 表头 -->
+<view class='line'>
+  <view class='content' style='text-align: center'>常见问题</view>
+</view>
+<!-- 表内容 -->
+<view class='line flex' wx:for="{{list}}" wx:key="index">
+  <view class='content'>{{item.question}}</view>
+  <view class='flex flex-center'>
+    <span data-id="{{item.id}}" bindtap="check">查看</span>
+  </view>
+</view>
+
+<!-- 窗口 -->
+<view class='mask' wx:if="{{popup}}">
+  <view class='popup' bindtap='close'>
+    <image src='/static/images/icon/close_light.png'></image>
+    <view>{{answer}}</view>
+  </view>
+</view>

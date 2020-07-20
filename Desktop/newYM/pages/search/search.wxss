@@ -1,0 +1,143 @@
+/* pages/search/search.wxss */
+page{
+    background: #f5f5f5;
+}
+
+.top{
+    position: fixed;
+    top: 0;
+    z-index: 1111;
+    width: 100%;
+    height: 84rpx;
+    background: white;
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+}
+
+.inputBox>image{
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.inputBox{
+  height: 64rpx;
+  width: 75%;
+  background: #f5f5f5;
+  border-radius: 34rpx;
+  margin: 10rpx auto;
+  padding: 0 30rpx 0 30rpx;
+  box-sizing: border-box;
+}
+
+.inputBox>input{
+  font-size: 28rpx;
+  color: #333;
+  font-weight: normal;
+  padding-left: 10rpx;
+  width: 80%;
+}
+
+.pla{
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+
+.searchBtn{
+  position: absolute;
+  right: 34rpx;
+  top: 20rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.classifyBox{
+  background: white;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.classify{
+  width: 20%;
+  height: 120rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.imgBox{
+  width: 68rpx;
+  height: 68rpx;
+  /* background: yellow; */
+  margin: 18rpx auto 0;
+  border-radius: 34rpx;
+}
+
+.act{
+  background: #dcdcdc;
+}
+
+.imgBox>image{
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 68rpx;
+  margin-top: 12rpx;
+}
+
+.imgBox+view{
+  font-size: 24rpx;
+  margin-top: 16rpx;
+}
+
+.shopList{
+  padding: 0 30rpx;
+  background: white;
+  border-bottom: 4rpx solid #ebebeb;
+}
+
+.shopItem{
+  padding: 24rpx;
+}
+
+.shopImg{
+  display: block;
+  width: 170rpx;
+  height: 168rpx;
+}
+
+.shopInfo {
+  padding-left: 56rpx;
+  color: #909090;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  flex-grow: 1;
+}
+
+.shopInfo>view {
+  height: 44rpx;
+}
+
+.shopName {
+  width: 410rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  font-size: 28rpx;
+}
+
+.shopInfo image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.null{
+  margin: 120rpx auto 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #cccccc;
+}
+
+.null>image{
+  width: 240rpx;
+  height: 250rpx;
+  margin: 30rpx 0 40rpx;
+}

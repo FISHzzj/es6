@@ -1,0 +1,29 @@
+<!--pages/location/location.wxml-->
+<scroll-view scroll-y scroll-with-animation scroll-into-view="{{cityId}}" style='height:100%;'>
+  <view class='title'>当前城市</view>
+  <view class='city'>{{locCity}}</view>
+
+  <!-- 热门城市 -->
+  <view class='title'>热点城市</view>
+  <view class='hotCity flex flex-wrap flex-jcsb'>
+    <view bindtap='choose' data-cityname='广州市'>广州市</view>
+    <view bindtap='choose' data-cityname='上海市'>上海市</view>
+    <view bindtap='choose' data-cityname='北京市'>北京市</view>
+    <view bindtap='choose' data-cityname='重庆市'>重庆市</view>
+    <view bindtap='choose' data-cityname='深圳市'>深圳市</view>
+    <view bindtap='choose' data-cityname='成都市'>成都市</view>
+  </view>
+
+  <!-- 城市列表 -->
+  <view wx:for="{{cityList}}" wx:key="index">
+    <view class='title' id='{{item.title}}'>{{item.title}}</view>
+    <view class='city' wx:for="{{item.lists}}" wx:key="*this" wx:for-item="city"  bindtap='choose' data-cityname='{{city}}'>{{city}}</view>
+  </view>
+</scroll-view>
+
+  <!-- 边侧导航 -->
+  <view class='side'>
+      <view wx:for="{{cityList}}" wx:key="index" data-id='{{item.title}}' bindtap='toId'>{{item.title}}</view>
+  </view>
+
+  <view class='letter' wx:if="{{show}}">{{cityId}}</view>

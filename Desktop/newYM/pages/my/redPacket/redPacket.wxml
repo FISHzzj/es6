@@ -1,0 +1,26 @@
+<!--pages/my/redPacket/redPacket.wxml-->
+<view style='background:white;'>
+  <view style='height:30rpx;'></view>
+  <view class='text'>野猫红包</view>
+  <view class='text'>{{balance}}</view>
+  <view style='width:50%;margin:30rpx auto 0;border-bottom:2px solid #e532a0;'></view>
+</view>
+
+<view class='title flex'>
+  <view>日期</view>
+  <view>项目</view>
+  <view>收支</view>
+  <view>余额</view>
+</view>
+
+<view class='dataLine flex' wx:for="{{dataList}}" wx:key="index">
+  <view>{{item.createtime}}</view>
+  <view>{{item.title}}</view>
+  <view>{{item.money}}</view>
+  <view>{{item.lastcredit2}}</view>
+</view>
+
+<view class='loading'>
+  <!-- <image src='/static/images/icon/loading.png'></image>
+  正在加载.... -->
+</view>

@@ -1,0 +1,18 @@
+<!--pages/rankList/rankList.wxml-->
+<view class='switchBox flex'>
+  <view class='swicthBtn' bindtap='clickTab' data-tab="" style='{{tabType==""?"background:#c8c1c1":""}}'>消费榜单</view>
+  <view class='swicthBtn' bindtap='clickTab' data-tab="vip" style='{{tabType=="vip"?"background:#c8c1c1":""}}'>分享会员榜单</view>
+  <view class='swicthBtn' bindtap='clickTab' data-tab="shop" style='{{tabType=="shop"?"background:#c8c1c1":""}}'>分享店铺榜单</view>
+</view>
+<view class='ListTitle flex'>
+  <view class='titleItem'>排名</view>
+  <view class='titleItem'>名称</view>
+  <view class='titleItem'>榜数据</view>
+</view>
+<view class='List flex' wx:for="{{list}}" wx:key="*this">
+  <view class='listItem'>{{item.ranking}}</view>
+  <view class='listItem'>{{item.nickname}}</view>
+  <view class='listItem' wx:if="{{item.peoplenum}}">{{item.peoplenum}}人</view>
+  <view class='listItem' wx:elif="{{item.money}}">{{item.money}}元</view>
+  <view class='listItem' wx:else>{{item.storenum}}家</view>
+</view>

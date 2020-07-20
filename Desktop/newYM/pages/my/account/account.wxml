@@ -1,0 +1,84 @@
+<!--pages/my/account/account.wxml-->
+<block wx:if="{{show}}">
+  <view class='headImg flex flex-ver flex-jcsb' data-type='headImg' bindtap='compile'>
+    <image src='{{member.avatar?member.avatar:member.avatar_wechat}}'></image>
+    <view class='info'>
+      <text>编辑头像</text>
+      <span class="arrows"></span>
+    </view>
+  </view>
+
+  <view class='line flex flex-ver flex-jcsb'>
+    <view class='title'>用户账户</view>
+    <view class='info'>
+      <text>{{member.mobile}}</text>
+    </view>
+  </view>
+
+  <view class='line flex flex-ver flex-jcsb' data-type='name' bindtap='compile'>
+    <view class='title'>昵称</view>
+    <view class='info'>
+      <text>{{member.nickname}}</text>
+      <span class="arrows"></span>
+    </view>
+  </view>
+
+  <view class='line flex flex-ver flex-jcsb'>
+    <view class='title'>性别</view>
+    <view class='info'>
+      <text>{{member.isex}}</text>
+    </view>
+  </view>
+
+  <view class='line flex flex-ver flex-jcsb'>
+    <view class='title'>生日</view>
+    <view class='info'>
+      <text>{{member.ibirthday}}</text>
+    </view>
+  </view>
+
+  <view class='line flex flex-ver flex-jcsb'>
+    <view class='title'>家乡</view>
+    <view class='info'>
+      <text>{{member.iprovinces}}{{member.icity}}{{member.iarea}}</text>
+    </view>
+  </view>
+
+  <view class='line flex flex-ver flex-jcsb' data-type='verify' bindtap='compile'>
+    <view class='title'>实名认证</view>
+    <view class='info'>
+      <text>{{isRealName==1?"已验证":"未验证"}}</text>
+      <span class="arrows"></span>
+    </view>
+  </view>
+</block>
+
+<!-- 信息编辑盒子 -->
+<block wx:if="{{!show}}">
+  <!-- 修改头像 -->
+  <view class='flex flex-jcsb flex-ver compileImg' wx:if="{{type=='headImg'}}">
+    <image src='{{headImg}}' style='border-radius:50%;'></image>
+    <image src='/static/images/icon/upload.png' bindtap='uploadImg'></image>
+  </view>
+  <!-- 修改昵称 -->
+  <view class='flex flex-jcsb flex-ver compileInput' wx:if="{{type=='name'}}">
+    <view class='inputBox flex flex-ver'>
+      输入昵称
+      <input placeholder='{{member.nickname}}' bindinput='input'></input>
+    </view>
+  </view>
+  <!-- 实名认证 -->
+  <view class='flex flex-jcsb flex-ver compileInput' wx:if="{{type=='verify'}}">
+    <view class='inputBox flex flex-ver'>
+      真实姓名
+      <input placeholder='{{}}' bindinput='input'></input>
+    </view>
+    </view>
+  <view class='flex flex-jcsb flex-ver compileInput' wx:if="{{type=='verify'}}">
+    <view class='inputBox flex flex-ver'>
+      身份证号
+      <input placeholder='{{}}' bindinput='input'></input>
+    </view>
+  </view>
+  <view class='button' bindtap='submit'>保存</view>
+</block>

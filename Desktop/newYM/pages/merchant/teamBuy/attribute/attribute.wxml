@@ -1,0 +1,62 @@
+<!--pages/attribute/attribute.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='text_box'>项目属性</view>
+  <!--列表内容------------------------------ -->
+  <view class='contempt_box'>
+    <view>
+      <text>项目名称：</text> {{form.title}}
+    </view>
+    <view>
+      <text>开始日期：</text>
+      <picker mode='date' bindchange="sTimeChange" name="starttime" value='{{begin}}'>
+        <view class="picker">
+          {{begin}}
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text>结束日期：</text>
+      <picker start="{{sTime}}" mode='date' bindchange='eTimeChange' name="endtime" value='{{end}}'>
+        <view class="picker">
+          {{end}}
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text>门店价格：</text>
+      <input placeholder='请输入门店价格' value='{{form.storeprice}}' name="storeprice"></input>
+    </view>
+    <view>
+      <text>项目价格：</text>
+      <input placeholder='请输入项目价格' value='{{form.itemprice}}' name="itemprice"></input>
+    </view>
+    <view class='bili'>
+      <text>夜猫红包比例：</text>
+      <input style='width: 90rpx;height:54rpx;border:1px solid #f5f5f5' value='{{form.redenveloperatio}}' placeholder='6' value='0' type='number' name="redenveloperatio"></input>%
+      <text class='bili_text'>(如需修改请输入1~100的整数)</text>
+    </view>
+    <view class='xuanzhe'>
+      <text>随时退款：</text>
+      <switch name="anytimerefund" checked="{{form.anytimerefund==1}}"></switch>
+    </view>
+    <view class='xuanzhe'>
+      <text>过期退款：</text>
+      <switch name="overduerefund" checked="{{form.overduerefund==1}}"></switch>
+    </view>
+    <view class='xuanzhe'>
+      <text>是否免预约：</text>
+      <switch name="isfreeappointment" checked="{{form.isfreeappointment==1}}"></switch>
+    </view>
+    <view class='xuanzhe'>
+      <text>是否上架：</text>
+      <switch name="status" checked="{{form.status==1}}"></switch>
+    </view>
+    <view class='xuanzhe'>
+      <text>是否审核：</text>
+      <switch name="checked" checked="{{form.checked==1}}"></switch>
+    </view>
+  </view>
+  <!-- 完成 -->
+  <button class='buttan'  form-type="submit" wx:if="{{pid}}" data-type='complete'>完成</button>
+  <button class='buttan buttana' form-type="submit" wx:else data-type='next'>下一步</button>
+</form>

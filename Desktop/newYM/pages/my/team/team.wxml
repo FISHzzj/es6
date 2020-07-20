@@ -1,0 +1,20 @@
+<!--pages/my/team/team.wxml-->
+<view class='top flex'>
+  <view class='tabBtn {{type==1?"act":""}}' data-type='1' bindtap='tab'>
+    我的直推会员
+    <view>{{info.myoneteamcount}}人</view>
+  </view>
+  <view class='tabBtn {{type==0?"act":""}}' data-type='0' bindtap='tab'>
+    我的团队会员
+    <view>{{info.teamnum}}人</view>
+  </view>
+</view>
+<block wx:if="{{list.length>0}}">
+  <view class='memberItem flex flex-ver' wx:for="{{list}}" wx:key="index">
+    <image class='headImg' src='{{item.avatar}}'></image>
+    <image src='/pages/img/dian.png'></image>
+    <text>{{item.mobile}}</text>
+    ({{item.time}})
+    <navigator url="/pages/my/chitchat/index?id={{item.id}}" hover-class="none">聊天</navigator>
+  </view>
+</block>

@@ -1,0 +1,38 @@
+<!--pages/my/collect/collect.wxml-->
+<view class='top flex'>
+  <view bindtap='tab' class='{{type==1?"act":""}}' data-type='1'>项目</view>
+  <view bindtap='tab' class='{{type==0?"act":""}}' data-type='0'>商家</view>
+</view>
+
+<!-- 项目 -->
+<block wx:if="{{type==1}}">
+  <navigator class='listItem flex' wx:for="{{list}}" wx:key="index" url='/pages/goods/goodDetail/goodDetail?goodsid={{item.id}}&merchid={{item.merchid}}'>
+    <image src='{{item.imgurl}}'></image>
+    <view class='infoBox'>
+      <view class='title'>{{item.title}}</view>
+      <view>{{item.description}}</view>
+      <view>
+        <span>￥{{item.itemprice}}</span>
+        <view class='sp'>门店价￥{{item.storeprice}}</view>
+      </view>
+    </view>
+  </navigator>
+</block>
+
+<!-- 商家列表 -->
+<block wx:if="{{type==0}}">
+  <navigator class='shopList' wx:for="{{list}}" wx:key="index" url='/pages/shop/detail/detail?id={{item.id}}'>
+    <view class='shopItem flex'>
+      <view class='shopImg'>
+        <image src='{{item.logo}}'></image>
+      </view>
+      <view class='shopInfo'>
+        <view class='shopName'>{{item.merchname}}</view>
+        <view class='flex flex-ver' style='margin-bottom: 10rpx;'>
+          <image src="/pages/img/star.png" wx:for="{{item.startNum}}" wx:key="index"></image>
+        </view>
+        <view>{{item.categoryname}}</view>
+      </view>
+    </view>
+  </navigator>
+</block>

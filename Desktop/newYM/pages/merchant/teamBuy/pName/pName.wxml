@@ -1,0 +1,7 @@
+<!--pages/merchant/teamBuy/pName/pName.wxml-->
+<view style='height: 60rpx;line-height:60rpx;text-align:center;color: #333;font-size: 28rpx;background: #f5f5f5;'>项目名称</view>
+<view class='line flex flex-ver'>
+  项目名称：
+  <input placeholder='请输入项目名称' bindinput='inpChange'></input>
+</view>
+<view class='next' bindtap='next'>下一步</view>

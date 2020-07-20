@@ -1,0 +1,133 @@
+<!--pages/goods/hotelDetail/hotelDetail.wxml-->
+<view class='top'>
+  <cover-view class='flex flex-ver flex-jcsb'>
+    <cover-view class="shopName">{{hotelInfo.merchname}}
+      <cover-view class='ell' style='color:#666;padding-top:6rpx;'>{{hotelInfo.introduction}}</cover-view>
+    </cover-view>
+    <cover-image src='/static/images/icon/like_fill.png' bindtap='collet' wx:if="{{isLike==0}}"></cover-image>
+    <cover-image src='/static/images/icon-red/like.png' bindtap='collet' wx:else></cover-image>
+  </cover-view>
+  <swiper class='shopImg' autoplay='1500' circular>
+    <swiper-item wx:for="{{bannerList}}" wx:key="index">
+      <image src='{{item}}'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 地址 -->
+<view class='locBox flex flex-ver'>
+  <image src='/pages/img/locIcon.png'></image>
+  <view class='locInfo flex flex-ver' bindtap='nav'>{{hotelInfo.store_address}}</view>
+  <image class='phone' bindtap='call' src='/pages/img/phone-red.png'></image>
+</view>
+
+<!-- 选择入住&退房时间 -->
+<view class='dateSelect flex' bindtap='dianji'>
+  <view>
+    <view class='status'>入住</view>
+    <view>{{starTime}}</view>
+  </view>
+  <view>
+    <view class='status'>入住</view>
+    <view>{{endTime}}</view>
+  </view>
+  <span>共{{day}}晚</span>
+</view>
+<rili bindmyevent="onMyEvent" id='rili'></rili>
+
+<!-- 类型选择 -->
+<checkbox-group class='typeSelect flex' bindchange="typeSelect">
+  <label class='{{bf==1?"act":""}}'>
+    <checkbox value="1" checked="{{item.checked}}" /> 含早
+  </label>
+  <label class='{{bigBed==1?"act":""}}'>
+    <checkbox value="2" checked="{{item.checked}}" /> 大床
+  </label>
+  <label class='{{wBed==1?"act":""}}'>
+    <checkbox value="3" checked="{{item.checked}}" /> 双床
+  </label>
+</checkbox-group>
+
+<!-- 房间列表 -->
+<view class='roomList'>
+  <view class='room flex' wx:for="{{roomList}}" wx:key="index">
+    <image class='roomImg' src='{{item.thumb}}' data-id='{{item.id}}' bindtap='detail'></image>
+    <view>
+      <view class='roomTitle'>{{item.title}}</view>
+      <view>双早 其他特色</view>
+      <view>双早 其他特色</view>
+    </view>
+    <view class='price flex flex-ver'>￥{{item.marketprice}}</view>
+    <view class='reservation' bindtap='book' data-id='{{item.id}}'>预订</view>
+  </view>
+</view>
+
+<!-- 评论列表 -->
+<view class='commentTitle flex flex-ver flex-jcsb'>
+  服务评价({{total}})
+  <span></span>
+</view>
+<view class='commentList'>
+  <view class='comment' wx:for="{{commentList}}" wx:key="index">
+    <view class='commentTop flex'>
+      <image src='{{item.avatar}}'></image>
+      <view class='userInfo flex flex-wrap'>
+        <view class='ell'>{{item.nickname}}</view>
+        <text>{{item.comment_time}}</text>
+        <view class='star flex'>
+          <image src='/pages/img/star.png' wx:for="{{item.comment_start}}" wx:key="index"></image>
+        </view>
+      </view>
+    </view>
+    <view class='commentContent'>
+      <view class='textBox'>{{item.comment_content}}</view>
+      <view class='imgBox flex flex-wrap'>
+        <image wx:for="{{item.image}}" wx:for-item="img" src='{{img}}' wx:key="index" bindtap='viewImg' data-imgList='{{item.image}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='mask' wx:if="{{isMask}}" bindtap='close'></view> -->
+
+<!-- 房间详情 -->
+<view class='roomDetail' wx:if="{{isDetail}}">
+  <swiper class='detailImg' autoplay='1500' circular>
+    <swiper-item wx:for="{{roomDetail.goods_imgs}}" wx:key="index">
+      <image src='{{item}}'></image>
+    </swiper-item>
+  </swiper>
+  <cover-image src="/static/images/icon/close_light.png" bindtap='close'></cover-image>
+  <cover-view class='roomName'>{{roomDetail.title}}</cover-view>
+  <view class='roomInfo flex flex-wrap'>
+    <view class='condition' style='width:100%;'>
+      <text>床型</text>{{roomDetail.housetype}}
+    </view>
+    <view class='condition'>
+      <text>早餐</text>{{roomDetail.breakfast}}
+    </view>
+    <view class='condition'>
+      <text>上网</text>{{roomDetail.internet}}
+    </view>
+    <view class='condition'>
+      <text>窗户</text>{{roomDetail.window}}
+    </view>
+    <view class='condition'>
+      <text>可住</text>{{roomDetail.live_num}}
+    </view>
+    <view class='condition'>
+      <text>卫浴</text>{{roomDetail.bathroom}}
+    </view>
+    <view class='condition'>
+      <text>面积</text>{{roomDetail.area}}
+    </view>
+  </view>
+  <scroll-view class='ruleBox' scroll-y>
+    <view class='ruleTitle'>取消规则</view>
+    <view class='li'>预订成功后不可取消，取消订单商家将收取全部房费</view>
+    <view style='height:36rpx;'></view>
+    <view class='ruleTitle'>入住规则</view>
+    <view class='ruleTitle'>{{roomDetail.live_rule}}</view>
+  </scroll-view>
+  <view class='reservationBtn'>￥{{roomDetail.marketprice}}马上预定</view>
+</view>

@@ -1,0 +1,61 @@
+<!--pages/merchant/manageData/otherData.wxml-->
+<view class='manageData'>
+  <!--  -->
+  <view class='top'>
+    <view class='li'>
+      <view>昨日直推新增</view>
+      <view>
+        <text>{{info.myoneteamcount}}</text>
+        <text class='setOpacity'>人</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日团队新增</text>
+      </view>
+      <view>
+        <text>{{info.teamnum}}</text>
+        <text class='setOpacity'>人</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日直推野猫红包</text>
+      </view>
+      <view>
+        <text>{{info.sharebuy}}</text>
+        <text class='setOpacity'>元</text>
+      </view>
+    </view>
+    <view class='li'>
+      <view>
+        <text>昨日团队野猫红包</text>
+      </view>
+      <view>
+        <text>{{info.teamsharebuy}}</text>
+        <text class='setOpacity'>元</text>
+      </view>
+    </view>
+  </view>
+  <view class='table'>
+    <view class='tableHead'>
+      <view class='th'>
+        <text>日期</text>
+        <text>总野猫红包</text>
+        <text>直推</text>
+        <text>团队</text>
+      </view>
+    </view>
+    <view class='tableBody'>
+      <view class='tr' wx:for="{{list}}" wx:key="index">
+        <text>{{item.day}}</text>
+        <text>{{item.sharebuy}}</text>
+        <text>{{item.myoneteamnum}}</text>
+        <text>{{item.teamnum}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='getMore' bindtap='getMore'>
+    {{moreText}}
+  </view>
+</view>

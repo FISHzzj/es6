@@ -1,0 +1,43 @@
+/* pages/billingDetails/billingDetails.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.header, .content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100rpx;
+}
+
+.header {
+  height: 80rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header>text{
+  width: 25%;
+
+}
+
+.main {
+  margin-top: 80rpx;
+}
+
+.content {
+  height: 100rpx;
+  padding-top: 20rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.content>text{
+  width: 25%;
+  height: 100%;
+  line-height: 40rpx;
+}

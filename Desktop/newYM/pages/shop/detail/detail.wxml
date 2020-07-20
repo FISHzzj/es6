@@ -1,0 +1,141 @@
+<!--pages/shop/detail/detail.wxml-->
+<!-- <view class='top'>
+  {{shopInfo.merchname}}
+  <image src='{{isLike==0?"/static/images/icon/like_fill.png":"/static/images/icon-red/like.png"}}' bindtap='collect'></image>
+</view> -->
+
+<!-- 轮播图 -->
+<swiper class='banner' autoplay='1500' circular>
+  <swiper-item wx:for="{{bannerList}}" wx:key="index">
+    <image class='bannerImg' src='{{item}}'></image>
+  </swiper-item>
+</swiper>
+
+<!-- 店铺信息 -->
+<view class="infoBox flex flex-ver flex-jcsb">
+  <view class="info">
+    <view class="flex flex-ver" style="font-weight: bold;font-size:34rpx;color:black;">
+      <text class="ell" style="display:inline-block;width: 55%;">{{shopInfo.merchname}}</text>
+      <text style="color:#E40B7B;font-size:32rpx">满减</text>
+    </view>
+    <view class="star flex flex-ver">
+      <image wx:for="{{star}}" wx:key="index" src='/static/images/icon/star.png'></image>
+    </view>
+    <view class="flex flex-ver">
+      <image src="/static/images/icon/goods.png" style="width:32rpx;height:32rpx;margin-right:10rpx;"></image>已售{{youhui.sale_count}}
+    </view>
+  </view>
+  <navigator url='/pages/shop/detail/orderConfirm?merchid={{shopId}}' class='payBtn'>买单</navigator>
+</view>
+<!-- 地址 -->
+<view class='locBox flex flex-ver'>
+  <view class='locInfo'>
+    <view style="width:90%" class="mell"><image src='/static/images/icon/address.png' style="width: 22rpx;height: 24rpx;margin:0 8rpx"></image>{{shopInfo.store_address}}</view>
+    <view class="adrInfo">
+      <!-- 距您   -->
+      <span class="flex-center">
+        <image src="/static/images/icon/address.png"></image>导航
+      </span>
+    </view>
+  </view>
+  <image class='phone' bindtap='call' src='/static/images/icon/ico-telephone.png'></image>
+</view>
+
+<!-- 店铺名 -->
+<!-- <view class='titleBox flex flex-jcsb'>
+  <view>{{shopInfo.merchname}}</view>
+  <view>
+    <image wx:for="{{star}}" wx:key="index" src='/pages/img/star.png'></image>
+  </view>
+</view> -->
+
+<!-- 店铺简介 -->
+<!-- <view class='intro'>
+  商家简介：
+  <view>{{shopInfo.introduction}}</view>
+</view> -->
+
+
+<!-- 优惠买单 -->
+<!-- <view class='payBox'>
+  <view class='payTitle flex flex-ver '>
+    <span>买</span>
+    优惠购买
+    <navigator url='/pages/shop/detail/orderConfirm?merchid={{shopId}}' class='payBtn'>买单</navigator>
+  </view>
+  <view class='sold flex flex-jcsb'>
+    |{{youhui.name}}
+    <view>已售{{youhui.sale_count}}></view>
+  </view>
+</view> -->
+
+<!-- 团购 -->
+<!-- <view class='groupTtile flex flex-ver'>
+  <span>团</span>团购
+</view> -->
+
+<view class='groupList'>
+  <navigator url='/pages/goods/goodDetail/goodDetail?goodsid={{item.id}}&merchid={{shopId}}' class='group' wx:for="{{teambuy}}" wx:key="index">
+    <view>({{item.title}})</view>
+    <view>{{item.weeklimit}} | {{item.isfreeappointment==1?"免预约":"需要预约"}} | 野猫红包
+      <text class='pink'>{{item.redpacket}}</text>
+      <view>已售{{item.count}}></view>
+    </view>
+    <view>
+      <text class='pink'>￥{{item.itemprice}}</text>门店价格：￥ {{item.storeprice}}</view>
+  </navigator>
+</view>
+
+<!-- 商品列表 -->
+<view class='goodsTitl'>商品列表：</view>
+<view class='goodsList flex flex-wrap' wx:if="{{goodsList.length>0}}">
+  <view class='goods' wx:for="{{goodsList}}" wx:key="index">
+    <image class='goodsImg' src='{{item.glogo}}'></image>
+    <image src='/static/images/icon-red/cart.png' bindtap='inCart' data-goodsid='{{item.id}}' data-price='{{item.marketprice}}'></image>
+    <view class='goodsInfo'>
+      <view class='goodsTitle ell'>{{item.title}}</view>
+      <view class='price'>￥{{item.marketprice}}
+        <text>销售： {{item.sales_num}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 数据为空时显示 -->
+<view class='null' wx:else>
+  <image src='/pages/img/search_list.png'></image>
+  <view>暂时没有任何记录!</view>
+</view>
+
+<!-- 评论列表 -->
+<view class='commentTitle flex flex-ver flex-jcsb'>
+  服务评价({{total}})
+  <span></span>
+</view>
+<view class='commentList'>
+  <view class='comment' wx:for="{{commentList}}" wx:key="index">
+    <view class='commentTop flex'>
+      <image src='{{itam.avatar}}'></image>
+      <view class='userInfo flex flex-wrap'>
+        <view class='ell'>{{item.nickname}}</view>
+        <text>{{item.comment_time}}</text>
+        <view class='star flex'>
+          <image src='/pages/img/star.png' wx:for="{{item.comment_start}}" wx:key="index"></image>
+        </view>
+      </view>
+    </view>
+    <view class='commentContent'>
+      <view class='textBox'>{{item.comment_content}}</view>
+      <view class='imgBox flex flex-wrap'>
+        <image wx:for="{{item.image}}" wx:for-item="img" src='{{img}}' wx:key="index" bindtap='viewImg' data-imgList='{{item.image}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='spCart' wx:if="{{cartTotal>0}}">
+  总价：￥ {{cartPrice}}
+  <span></span> 数量: {{cartTotal}}
+  <navigator url='/pages/member/cart/cart?merchid={{shopId}}'>去下单</navigator>
+
+</view>

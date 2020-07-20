@@ -1,0 +1,23 @@
+
+<view class="shopBox" wx:for="{{shopList}}" wx:key="index">
+  <view class='title'>
+    <image src='/static/images/icon/store.png' class='shopIcon' mode="widthFix"></image>
+    {{item.shopname}}
+  </view>
+  <!-- <view class='goodsList'> -->
+    <view class='goods flex' wx:for="{{item.goods}}" wx:key="index" wx:for-item="goods" >
+      <image src='{{goods.thumb}}'></image>
+      <view class='goodsInfo flex flex-wrap'>
+        <view class='goodsTitle mell'>{{goods.title}}</view>
+        <view class='goodsPrice'>￥{{goods.marketprice}}</view>
+        <view>x{{goods.total}}</view>
+      </view>
+    </view>
+  <!-- </view> -->
+    <view class='subtotal'>共 <text class='red'>{{item.total}}</text> 件商品 共计：<text class='red'>￥{{item.ggprice}}</text></view>
+</view>
+
+<view class='btm flex'>
+  <view class='totalPrice'>需付：<text class='red'>￥{{totalPrice}}</text></view>
+  <button class='confirm' bindtap='confirm' disabled="{{isSubmit}}">立即下单</button>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/my/catBean/catBean.wxml-->
+<view class='top'>
+  <view>
+    <view>我的猫豆</view>
+    <view>{{credit}}</view>
+  </view>
+</view>
+
+<!-- 表头 -->
+<view class='title flex'>
+  <view>日期</view>
+  <view>项目</view>
+  <view>收支</view>
+  <view>余额</view>
+</view>
+
+<!-- 表数据 -->
+<block wx:if="{{list.length>=1}}">
+  <view class='tableLine flex' wx:for="{{list}}" wx:key="index">
+    <view>{{item.createtime}}</view>
+    <view>{{item.recharge}}</view>
+    <view>{{item.money}}</view>
+    <view>{{item.lastcredit2}}</view>
+  </view>
+</block>
+
+<!-- 空数据提示 -->
+<view class='null' wx:if="{{!(list.length>=1)}}">
+  <image src='/pages/img/search_list.png'></image>
+  <view>暂时没有任何记录!</view>
+</view>

@@ -1,0 +1,77 @@
+
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page navbar order'>
+    <scroll-view scroll-x="true" style="height:80rpx;position: fixed; top: 0; z-index: 1000;">
+      <view class="orderscroll" style="width:100%">
+        <view data-type='all' bindtap='selected' class='item {{status == "all"?"active":""}}'>全部</view>
+        <view data-type='0' bindtap='selected' class='item {{status == "0"?"active":""}}'>未付款</view>
+        <view data-type='1' bindtap='selected' class='item {{status == 1?"active":""}}'>待发货</view>
+        <view data-type='-1' bindtap='selected' class='item {{status == 4?"active":""}}'>退换货</view>
+      </view>
+    </scroll-view>
+    <block wx:if='{{list.length != 0}}'>
+      <view class='contain'>
+        <block>
+          <view wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list" data-index="{{index}}" class='fui-list-group noclick orderBox'>
+            <view data-index="{{index}}" style="position:relative;overflow:hidden">
+              <view class='fui-list-group-title orderTitle'>
+                <view class='order-num'>{{item.merchname}} {{item.merchtype=='shop'||item.merchtype=='youhui'}}</view>
+                <view class='statuscss'>{{item.statusstr}}</view>
+              </view>
+              <!-- 普通订单 -->
+              <view class='orderInfo' wx:if="{{item.merchtype=='shop'||item.merchtype=='youhui'}}">
+                <text>下单时间：{{item.createtime}}</text>
+                <text>总价：￥{{item.realmoney}} {{item.isdeduction==1?"（红包抵扣：￥"+item.deduction+"）":""}}</text>
+              </view>
+              <!-- 点餐订单 -->
+              <view class='orderInfo' wx:elif="{{item.merchtype=='ordermeal'}}">
+                <text>下单时间：{{item.createtime}}</text>
+                <view class='goodsBox' wx:for="{{item.ordergoods}}" wx:for-item="goods" wx:key="index">{{goods.title}} <span>x{{goods.total}}</span></view>
+                <text>总价：￥{{item.realmoney}} {{item.isdeduction==1?"（红包抵扣：￥"+item.deduction+"）":""}}</text>
+              </view>
+              <!-- 酒店订单 -->
+              <view class='orderInfo' wx:elif="{{item.merchtype=='hotel'}}">
+                <text>房型：{{item.h_title}}</text>
+                <text>入住时间：{{item.h_startdate}}~{{item.h_enddate}}</text>
+                <text>入驻天数：{{item.h_days}}天</text>
+                <text>房间数：{{item.h_num}}间</text>
+                <text>登记姓名：{{item.h_peoples}}</text>
+                <text>总价：{{item.h_marketprice}}</text>
+              </view>
+              <!-- 团购订单 -->
+              <view class='orderInfo flex' wx:elif="{{item.merchtype=='groupbuy'}}">
+                <image src='{{item.groupimg}}' wx:if="{{item.status==1}}"></image>
+                <view>
+                  <text>下单时间：{{item.createtime}}</text>
+                <text>{{item.groupbuy_total}}张|总价：{{item.grprice}}天</text>
+                <text>有效期至：{{item.timeout}}</text>
+                </view>
+              </view>
+              <view class='orderDel' style='{{item.moveX}}' bindtap='orderDel'>删除</view>
+            </view>
+            <view class='orderOp'>
+              <text>{{item.merchtype=="groupbuy"?"团购":item.merchtStr}}</text>
+              <!-- <span wx:if="{{item.status==1}}" bindtap="evaluate" data-index="{{index}}" data-id="{{item.id}}">点击处理</span> -->
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:if='{{list.length == 0 && empty}}'>
+      <view class='center'>
+        <view class='empty'>
+          <image class='light' src='/static/images/icon/lights-128.png'></image>
+          <view class='text-cancel'>暂时没有任何订单</view>
+        </view>
+      </view>
+    </block>
+    <!-- <navigator hoverClass='none' openType='switchTab' url='/pages/member/index/index' class='fui-dot'>
+      <image src='/static/images/icon-white/people.png'></image>
+    </navigator> -->
+    <include src='/pages/order/public/verify.wxml' />
+    <include src='/pages/common/menu.wxml' />
+  </view>
+</block>

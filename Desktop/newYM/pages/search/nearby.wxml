@@ -1,0 +1,74 @@
+<!--pages/search/nearby.wxml-->
+<!-- 搜索框 -->
+<view class='top flex flex-ver flex-jcsb'>
+  <view class="inputBox flex flex-ver">
+    <image src="/pages/img/search-gray.png"></image>
+    <input placeholder="输入商家名、品类或商圈" placeholder-class="pla" bindfocus="focus"></input>
+  </view>
+  <view class='searchBtn'><image src="/static/images/icon/msg.png"></image></view>
+</view>
+<view style='height:158rpx;'></view>
+
+<view class='mask' bindtap='close' wx:if="{{isMask}}"></view>
+
+
+<!-- 筛选栏 -->
+<view class='filtrateBox flex'>
+  <view class='flex flex-center {{type=="all"?"act":""}}' bindtap='filtrate' data-type='all'>全部
+    <span class='triangle {{type=="all"?"up":""}}'></span>
+  </view>
+  <view class='flex flex-center {{type=="fujin"?"act":""}}' bindtap='filtrate' data-type='fujin'>附近
+    <span class='triangle {{type=="fujin"?"up":""}}'></span>
+  </view>
+  <view class='flex flex-center {{type=="zhineng"?"act":""}}' bindtap='filtrate' data-type='zhineng'>{{sortType}}
+    <span class='triangle {{type=="zhineng"?"up":""}}'></span>
+  </view>
+  <view class='flex flex-center {{type=="flt"?"act":""}}' bindtap='filtrate' data-type='flt'>筛选
+    <span class='triangle {{type=="flt"?"up":""}}'></span>
+  </view>
+</view>
+
+<!-- 区域/街道选择 -->
+<view class='DSBox flex {{isFujin?"showAnimation0":""}}'>
+  <view class='district'>
+    <view class='districtItem'>
+      <span>商圈</span>
+    </view>
+    <view class='districtItem' bindtap='dctSelect' data-code='1' style='{{DCode==1?"color:#a59e9e":""}}'>附近 ></view>
+    <view class='districtItem' bindtap='dctSelect' style='{{DCode==item.code?"color:#a59e9e":""}}' wx:for="{{districtList}}" wx:key="index" data-code='{{item.code}}' data-area='{{item.name}}'>{{item.name}}</view>
+  </view>
+  <view class='streetBox'>
+    <view class='street'></view>
+    <block wx:if="{{DCode==1}}">
+      <view class='street' wx:for="{{nbList}}" wx:key="*this" data-meter='{{item.meter}}' bindtap='stSelect'>{{item.text}}</view>
+    </block>
+    <block wx:else>
+      <view class='street' wx:for="{{streetList}}" wx:key="*this" data-street='{{item}}' bindtap='stSelect'>{{item}}</view>
+    </block>
+  </view>
+</view>
+
+<!-- 智能排序 -->
+<view class="sortBox {{isSort?'showAnimation1':''}}">
+  <view data-sort='default' bindtap='sort'>智能排序</view>
+  <view data-sort='nearest' bindtap='sort'>离我最近</view>
+  <view data-sort='good' bindtap='sort'>好评优先</view>
+  <view data-sort='popularity' bindtap='sort'>人气最高</view>
+</view>
+
+<!-- 店铺列表 -->
+<view class='shopList'>
+  <navigator url='/pages/shop/detail/detail?id={{item.id}}' class='shopItem flex' wx:for="{{shopList}}" wx:key="index">
+    <image class='shopImg' src='{{item.logo}}'></image>
+    <view class='shopInfo'>
+      <view class='shopName'>{{item.merchname}}</view>
+      <view class='flex'>
+        <image src="/static/images/icon/star.png" wx:for="{{item.startLength}}" wx:key="index" wx:for-item="start"></image>
+      </view>
+      <view>{{item.categoryname}}</view>
+      <view><image src="/static/images/icon/goods.png" style="width:32rpx;height:32rpx;margin: 0 4rpx;"></image>已售{{item.sellcount}}
+        <text style='float:right'>{{item.distance_um}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>

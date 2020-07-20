@@ -1,0 +1,48 @@
+/* pages/Settledin/Settledin.wxss */
+.boxs{
+  box-sizing: border-box;
+}
+page{
+  background: #f5f5f5;
+}
+.textbot{
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+  padding: 0 100rpx;
+  color: #888888;
+  /* text-align: center; */
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.textbot text{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+/* 按钮------------------------------ */
+.butt_box{
+  width: 100%;
+  padding: 0 40rpx;
+  /* background: yellow; */
+  
+}
+.butt_box navigator{
+  width: 100%;
+  height: 74rpx;
+  background: #e532a0;
+  margin-bottom: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 74rpx;
+  border: 2rpx solid #e532a0;
+  border-radius: 10rpx;
+}
+.butt_box view:nth-child(2){
+  background: #fff;
+  color: #e532a0;
+
+}

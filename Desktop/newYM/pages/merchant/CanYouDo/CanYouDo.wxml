@@ -1,0 +1,98 @@
+<!--pages/CanYouDo/CanYouDo.wxml-->
+<view class='canYouDo'>
+  <view class='h3'>
+    主体信息
+  </view>
+  <view class='content'>
+    <view class='tr'>
+      <view class='th'>
+        主体类型
+      </view>
+      <view class='td'>
+        {{data.miantype}}
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='th'>
+        个体名称
+      </view>
+      <view class='td'>
+        {{data.unitname}}
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='th'>
+        营业者
+      </view>
+      <view class='td'>
+        {{data.operator}}
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='th'>
+        统一社会信用代码
+      </view>
+      <view class='td'>
+        {{data.socialcode}}
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='th'>
+        结算方式
+      </view>
+      <view class='td'>
+        {{data.alipaytype==0?"个人支付宝":"企业支付宝"}}
+      </view>
+    </view>
+    <view class='tr'>
+      <view class='th'>
+        结算账号
+      </view>
+      <view class='td'>
+        {{data.alipaynum}}
+      </view>
+    </view>
+  </view>
+  <!-- 上分二分 -->
+  <view class='h3'>
+    主体证照片
+  </view>
+  <view class='content'>
+    <view class='imgLine flex flex-ver'>
+      <view>
+        营业执照副本
+      </view>
+      <image src='{{data.businesslicense_img}}'></image>
+    </view>
+    <view class='imgLine flex flex-ver'>
+      <view>
+        特许经营许可证
+      </view>
+      <image src='{{data.businesscertificate_img}}'></image>
+    </view>
+    <view class='imgLine flex flex-ver'>
+      <view>
+        法人身份证正面
+      </view>
+      <image src='{{data.idcard_front_img}}'></image>
+    </view>
+    <view class='imgLine flex flex-ver'>
+      <view>
+        法人身份证反面
+      </view>
+      <image src='{{data.idcard_back_img}}'></image>
+    </view>
+    <view class='imgLine flex flex-ver'>
+      <view>
+        开户许可证
+      </view>
+      <image src='{{data.promiseopen_img}}'></image>
+    </view>
+    <view class='imgLine flex flex-ver'>
+      <view>
+        其他资料
+      </view>
+      <image src='{{data.else_image}}'></image>
+    </view>
+  </view>
+</view>

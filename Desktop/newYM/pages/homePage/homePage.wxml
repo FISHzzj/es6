@@ -1,0 +1,72 @@
+<!--pages/homePage/homePage.wxml-->
+<!-- 顶部 -->
+<view class='top'>
+  <view>野猫精彩</view>
+  <view class="flex flex-ver flex-jcsb topdizhi">
+    <navigator url='/pages/location/location?locCity={{locCity}}'>
+      <view class='region flex flex-ver'>
+        <image src="/static/images/icon/loc.png"></image>{{locCity}}
+      </view>
+    </navigator>
+    <navigator class='topBtn flex-center' url='/pages/search/search'>
+      <image src='/static/images/icon/search.png'></image>
+      搜索
+    </navigator>
+  </view>
+  <view class="toplist">
+    <view>
+      <image src="/static/images/icon/saoma@2x.png"></image>
+      <text>扫一扫</text>
+    </view>
+    <view>
+      <image src="/static/images/icon/qiabao@2x.png"></image>
+      <text>购物包</text>
+    </view>
+    <view>
+      <image src="/static/images/icon/quedingshangjia@2x.png"></image>
+      <text>推商家</text>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <swiper class='banner' autoplay interval="5000" indicator-dots="true" indicator-color="rgba(255, 255, 255, .74)" indicator-active-color="#c42d23" circular>
+  <swiper-item wx:for="{{banner}}" wx:key="index">
+    <image src='{{item.icon}}'></image>
+  </swiper-item>
+</swiper>
+</view>
+<!-- 分类 -->
+<view class='classifyBox'>
+  <navigator url='/pages/search/search?id={{item.id}}' wx:for="{{classifyList}}" wx:key="index">
+    <view class='classifyBtn'>
+      <image src='{{item.advimg}}'></image>
+      <view>{{item.name}}</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 轮播图 -->
+<swiper class='bannerTwo' autoplay interval="5000" indicator-dots="true" indicator-color="rgba(255, 255, 255, .74)" indicator-active-color="#c42d23" circular>
+  <swiper-item wx:for="{{banner2}}" wx:key="{{index}}">
+    <image src='{{item.icon}}'></image>
+  </swiper-item>
+</swiper>
+<view style='height:20rpx;background:#f5f5f5;'></view>
+
+<view class='recommend'>-本地推荐-</view>
+<!-- 店铺列表 -->
+<view class='shopList'>
+  <navigator url="/pages/shop/detail/detail?id={{item.id}}" class='shopItem flex' wx:for="{{shopList}}" wx:key="index">
+    <image class='shopImg' src='{{item.logo}}'></image>
+    <view class='shopInfo'>
+      <view class='shopName'>{{item.merchname}}</view>
+      <view class='flex flex-ver'>
+        <image src="/pages/img/star.png" wx:for="{{item.startLength}}" wx:key="index" wx:for-item="start"></image>
+        <text>5折</text>
+      </view>
+      <view>{{item.categoryname}}</view>
+      <view>已售{{item.sellcount}}
+        <text style='float:right'>{{item.distance_um}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,79 @@
+/* pages/Sett_zhuti/Sett_zhuti.wxss */
+.head_box{
+  width: 100%;
+  height: 60rpx;
+  background: #e5e5e5;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #000;
+}
+.content_box view{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  padding-left: 28rpx;
+  
+}
+.flex-al-cen{
+  display: flex;
+  align-items: center;
+}
+
+.flex-jusb{
+  justify-content: space-between;
+}
+.content_box view input{
+  margin-left: 20rpx;
+}
+.boxs{
+  box-sizing: border-box;
+}
+.right{
+  float: right;
+  margin-right: 30rpx;
+}
+.butt_box{
+  width: 100%;
+  height: 74rpx;
+  margin-top: 40rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  
+  text-align: center;
+}
+.butt_box button{
+  width: 100%;
+  height: 100%;
+  background: #e532a0;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  line-height: 74rpx;
+}
+.content_box .tlae{
+  width: 80rpx;
+  height: 80rpx;
+  border: 2rpx solid #000;
+  margin: 0  20rpx;
+  line-height: 80rpx;
+}
+
+.wx-switch-input{
+    width:76rpx !important;
+    height:36rpx !important;
+    background: #e532a0 !important;
+    border: #fff !important; /* 2018-07-18 重置开关边框颜色 */
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+    width:80rpx !important;
+    height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 36rpx !important;
+}

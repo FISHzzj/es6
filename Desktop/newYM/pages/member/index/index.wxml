@@ -1,0 +1,256 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+
+<!--pages/center/index.wxml-->
+<block wx:if='{{show}}'>
+  <view class="oy_center_head" style="background-image: url({{memberBG}});">
+    <view class="infoBox" style="background-image:url({{rectangleBG}})">
+      <image mode="aspectFill" class="oy_user_img" src='{{member.avatar || "/static/images/noface.png"}}'></image>
+      <view>{{member.nickname}}</view>
+      <text>{{member.levelname}}</text>
+      <span bindtap="signIn" class="signIn">签到</span>
+      <!-- <navigator bindtap='merchant'>
+          <span>商家管理</span>
+        </navigator> -->
+      <button class='combine' open-type="getUserInfo" catchgetuserinfo="combine" wx:if="{{member.other_account==1}}">合并账号</button>
+      <navigator url="{{member.open_withdraw==1?'/pages/member/withdraw/index':''}}">
+        <view class=" flex flex-ver flex-jcsb catBalance">
+          <view class="flex-1">
+            <image src="/static/images/icon/wallet.png"></image>
+            <text style="color:#F7B500;padding-right:8rpx;">我的钱包</text> {{member.credit2}}</view>
+          <view class="withdraw">马上提现</view>
+        </view>
+      </navigator>
+    </view>
+    <navigator hover-class='none' url="/pages/member/set/index">
+      <image mode='aspectFill' src="../../img/set.png" class="oy_set_img"></image>
+    </navigator>
+    <!-- <view bindtap='showQR'>
+      <image mode='aspectFill' src="../../img/QRcodeIcon.png" class="oy_msg_img" style='background:white;top:90rpx;'></image>
+    </view> -->
+  </view>
+  <!-- 红包&团队 -->
+  <view class="oy_center_item_box flex flex-ver">
+    <navigator class='opBox' url='/pages/my/redPacket/redPacket'>
+      <text>红包</text>
+      <view>余额明细</view>
+    </navigator>
+    <navigator class='opBox' url='/pages/my/team/team?type=1'>
+      <text>粉推</text>
+      <view>我的粉推</view>
+    </navigator>
+    <navigator url='/pages/my/team/team?type=0' class='opBox'>
+      <text>团队</text>
+      <view>我的团队</view>
+    </navigator>
+  </view>
+  <!-- 猫屎&猫豆 -->
+  <navigator class="catBean flex flex-ver" url='/pages/my/catBean/catBean'>
+    <image src="/static/images/icon/catBean.png" mode="aspectFit"></image>
+    我的猫豆
+    <view class="flex-1"></view>
+    <text>{{member.credit3}}</text>
+    <span class="toIcon"></span>
+  </navigator>
+  <navigator class="catBean flex flex-ver" url='/pages/my/catFeces/catFeces'>
+    <image src="/static/images/icon/catfeces.png" mode="aspectFit"></image>
+    我的猫屎
+    <view class="flex-1"></view>
+    <text>{{member.credit1}}</text>
+    <span class="toIcon"></span>
+  </navigator>
+
+  <!-- 订单 -->
+  <view class="order">
+    <navigator class="flex flex-ver" open-type="switchTab" url="/pages/order/index">
+      我的订单
+      <view class="flex-1"></view>
+      <text style="color:#7F7F7F;font-size:24rpx;">查看全部订单</text><span class="toIcon"></span>
+    </navigator>
+    <view class="flex flex-ver orderType">
+      <view class="flex flex-col flex-ver" bindtap="toOrder" data-status="all">
+        <image src="/static/images/icon/nav33-act.png" mode='aspectFit'></image>
+        <view>全部订单</view>
+      </view>
+      <view class="flex flex-col flex-ver" bindtap="toOrder" data-status="0">
+        <image src="/static/images/icon/non-payment.png" mode='aspectFit'></image>
+        <view>未付款</view>
+      </view>
+      <view class="flex flex-col flex-ver" bindtap="toOrder" data-status="1">
+        <image src="/static/images/icon/payment.png" mode='aspectFit'></image>
+        <view>已支付</view>
+      </view>
+      <view class="flex flex-col flex-ver" bindtap="toOrder" data-status="4">
+        <image src="/static/images/icon/refund.png" mode='aspectFit'></image>
+        <view>已退款</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 大转盘 -->
+  <navigator url='/pages/dial/dial'>
+    <image src="/static/images/ban0.jpg" class="dial"></image>
+  </navigator>
+
+  <!-- 券包&排行榜 -->
+  <view class="flex items0">
+    <navigator class="flex flex-center" url='/pages/sale/coupon/my/index/index'>
+      <image src="/static/images/icon/ticketBag.png"></image>我的券包
+    </navigator>
+    <navigator class="flex flex-center" url='/pages/rankList/rankList'>
+      <image src="/static/images/icon/rank.png"></image>排行榜
+    </navigator>
+  </view>
+
+  <view>商家服务</view>
+
+  <view class="flex flex-wrap">
+    <navigator class="item flex flex-col flex-ver" bindtap="merchant">
+      <image src="/static/images/icon/member.png" mode="aspectFit"></image>
+      商家管理
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" url='/pages/invitation/invitation'>
+      <image src="/static/images/icon/enter.png" mode="aspectFit"></image>
+      授权码
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" bindtap='tobemerchant' wx:if="{{isHide}}">
+      <image src="/static/images/icon/generalize.png" mode="aspectFit"></image>
+      成为推广
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" bindtap='showQR'>
+      <image src="/static/images/icon/invite.png" mode="aspectFit"></image>
+      邀请好友
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" bindtap='scan'>
+      <image src="/static/images/icon/scanCode.png" mode="aspectFit"></image>
+      扫码点餐
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" bindtap='showQR'>
+      <image src="/static/images/icon/share.png" mode="aspectFit"></image>
+      分享二维码
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" url='/pages/popularize/popularize?id={{member.id}}' wx:if="{{member.clevelid==null}}">
+      <image src="/static/images/icon/generalizeData.png" mode="aspectFit"></image>
+      推广数据
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" url='/pages/dial/dial' wx:if="{{isHide}}">
+      <image src="/static/images/icon/turnplate.png" mode="aspectFit"></image>
+      大转盘抽奖
+    </navigator>
+    <navigator class="item flex flex-col flex-ver" url='/pages/xiaoxi/index/xiaoxi'  >
+      <image src="/static/images/icon/member.png" mode="aspectFit"></image>
+      消息模块
+    </navigator>
+  </view>
+
+  <!-- <navigator url='/pages/my/catBean/catBean'>
+    <view class='toolLine flex flex-ver'>
+      <text>我的猫豆</text>
+      <span>{{member.credit1}}</span>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/order/index' open-type='switchTab'>
+    <view class='toolLine flex flex-ver'>
+      <text>我的订单</text>
+      <span>全部订单</span>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/sale/coupon/my/index/index'>
+    <view class='toolLine flex flex-ver'>
+      <text>我的券包</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/dial/dial' wx:if="{{isHide}}">
+    <view class='toolLine flex flex-ver'>
+      <text>大转盘抽奖</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/rankList/rankList'>
+    <view class='toolLine flex flex-ver'>
+      <text>排行榜</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/member/identification/identification' wx:if="{{member.is_authentication==0}}">
+    <view class='toolLine flex flex-ver'>
+      <text>实名认证</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <view class='toolLine flex flex-ver' bindtap='tobemerchant' wx:if="{{isHide}}">
+    <text>成为推广商</text>
+    <view class='rightIcon'></view>
+  </view>
+  <navigator url='/pages/popularize/popularize?id={{member.id}}' wx:if="{{member.clevelid==null}}">
+    <view class='toolLine flex flex-ver'>
+      <text>推广数据</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <view class='toolLine flex flex-ver' bindtap='scan'>
+    <text>扫码点餐</text>
+    <view class='rightIcon'></view>
+  </view>
+  <navigator url='/pages/invitation/invitation'>
+    <view class='toolLine flex flex-ver'>
+      <text>商家入驻邀请码</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/member/bind/index'>
+    <view class='toolLine flex flex-ver'>
+      <text>修改手机</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <view class='toolLine flex flex-ver' bindtap='showQR'>
+    <text>邀请好友</text>
+    <view class='rightIcon'></view>
+  </view>
+  <navigator url='/pages/my/collect/collect'>
+    <view class='toolLine flex flex-ver'>
+      <text>我的收藏</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/my/question/question'>
+    <view class='toolLine flex flex-ver'>
+      <text>常见问题</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator>
+  <navigator url='/pages/my/aboutUs/aboutUs'>
+    <view class='toolLine flex flex-ver'>
+      <text>关于我们</text>
+      <view class='rightIcon'></view>
+    </view>
+  </navigator> -->
+  <view style="font-size:22rpx;text-align:center;width:100%;padding:80rpx 0 0 0;{{member.copyrightlogo?'background-image:url('+member.copyrightlogo+');background-size:50rpx 50rpx; background-repeat: no-repeat;background-position:center;':''}}">{{member["copyrighttext"]}}</view>
+  <!-- 客服  -->
+  <view wx:if='{{member["customer"] == "1"}}' class="quic">
+    <view class='info'>
+      <view class="quicbg">
+        <button open-type="contact" MsgType="miniprogrampage" send-message-title="{{member.nickname}}" send-message-img="" show-message-card="true">
+          <view class="pic" style="{{member.customercolor?'background:'+member.customercolor:''}}">
+            <image class='icon' src='{{icons["service"]}}'></image>
+          </view>
+        </button>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class='mask' wx:if="{{isShow}}" bindtap='close'></view>
+
+<view class='showQR' wx:if="{{isShow}}">
+  <image class='poster' src="{{inviteQR}}"></image>
+  <view bindtap='close'>关闭</view>
+</view>
+
+<button class='getUserInfo' open-type="getUserInfo" catchgetuserinfo="getWXuserInfo" wx:if="{{isinformation==0}}">
+</button>

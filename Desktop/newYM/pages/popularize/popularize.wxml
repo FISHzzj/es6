@@ -1,0 +1,66 @@
+<!--pages/popularize/popularize.wxml-->
+<view class='tabBox'>
+  <view data-tab="xiaji" bindtap='tab' style='{{dataType=="xiaji"?"background:#c8c1c1":""}}'>下级推广商</view>
+  <view data-tab="shangjia" bindtap='tab' style='{{dataType=="shangjia"?"background:#c8c1c1":""}}'>推广商家</view>
+  <view data-tab="huiyuan" bindtap='tab' style='{{dataType=="huiyuan"?"background:#c8c1c1":""}}'>推广会员</view>
+</view>
+<block wx:if="{{dataType=='xiaji'}}">
+  <view class='title'>
+    <view>推广商名称</view>
+    <view>推广总额</view>
+    <view>销售总量</view>
+    <view>操作</view>
+  </view>
+  <view class='tableLine'>
+    <text>营业总额</text>
+    <text>{{sum_turnover}}</text>
+    <text>销售总额</text>
+    <text>{{sum_salesvolume}}</text>
+  </view>
+  <view class='table-item' wx:for="{{list}}" wx:key="index">
+    <span>{{item.nickname}}</span>
+    <span>{{item.turnover}}</span>
+    <span>{{item.salesvolume}}</span>
+    <span>
+      <text bindtap='check'>查看</text>
+    </span>
+  </view>
+</block>
+<block wx:if="{{dataType=='shangjia'}}">
+  <view class='title'>
+    <view>商家名称</view>
+    <view>营业额</view>
+    <view>销售量</view>
+    <view>授权码</view>
+  </view>
+  <view class='tableLine'>
+    <text>营业总额</text>
+    <text>{{sum_turnover}}</text>
+    <text>销售总额</text>
+    <text>{{sum_salesvolume}}</text>
+  </view>
+  <view class='table-item' wx:for="{{list}}" wx:key="index">
+    <span>{{item.merchname}}</span>
+    <span>{{item.turnover}}</span>
+    <span>{{item.salesvolume}}</span>
+    <span>{{item.code}}</span>
+  </view>
+</block>
+<block wx:if="{{dataType=='huiyuan'}}">
+  <view class='title'>
+    <view>会员名称</view>
+    <view>消费额</view>
+    <view>订单量</view>
+  </view>
+  <view class='tableLine'>
+    <text>消费总额</text>
+    <text>{{sum_turnover}}</text>
+    <text>订单总量</text>
+    <text>{{sum_salesvolume}}</text>
+  </view>
+  <view class='table-item' wx:for="{{list}}" wx:key="index">
+    <span>{{item.nickname}}</span>
+    <span>{{item.turnover}}</span>
+    <span>{{item.salesvolume}}</span>
+  </view>
+</block>

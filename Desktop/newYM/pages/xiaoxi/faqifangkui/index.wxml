@@ -1,0 +1,7 @@
+<view class='page'>
+  <view class='coupon-box'>
+    <input class="coupon-input" placeholder="请输入标题" bindchange="couponinput" ></input>
+    <textarea class="coupon-textarea" placeholder="请输入内容" bindblur="coupontext"></textarea>
+  </view>
+  <view class='fabiao' bindtap="getList">发表</view>
+</view>

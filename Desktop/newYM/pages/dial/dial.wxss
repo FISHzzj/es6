@@ -1,0 +1,322 @@
+/* pages/dial/dial.wxss */
+
+page {
+  background: antiquewhite;
+}
+
+.top {
+  width: 100%;
+  margin-top: 60rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.top>span {
+  display: inline-block;
+  width: 160rpx;
+}
+
+.top>view {
+  width: 320rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #ffdc00;
+  color: #663008;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  padding: 0;
+}
+
+.top>navigator {
+  width: 320rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #ffdc00;
+  color: #663008;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  padding: 0;
+}
+
+.dialBox {
+  position: relative;
+  width: 600rpx;
+  height: 600rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.catBean {
+  position: absolute;
+  width: 300rpx;
+  top: 40rpx;
+  left: calc(50% - 150rpx);
+  text-align: center;
+  font-size: 24rpx;
+  color: #333;
+  z-index: 11;
+}
+
+.catBean>text {
+  color: #eb0000;
+}
+
+.itemBox {
+  position: absolute;
+  top: 74rpx;
+  left: 82rpx;
+  width: 440rpx;
+  height: 440rpx;
+}
+
+.itemBox>view {
+  position: relative;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+  background: #ffa844;
+  color: white;
+  margin: 12rpx;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.select {
+  background: #feeb41 !important;
+  box-shadow: 0 0 30rpx #feeb41;
+}
+
+.prize {
+  display: block;
+  width: 80rpx;
+  height: 60rpx;
+  margin: 10rpx 10rpx 0;
+}
+
+.prize+text {
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}
+
+.item3 {
+  order: 5;
+}
+
+.item4 {
+  order: 8;
+}
+
+.item5 {
+  order: 7;
+}
+
+.item6 {
+  order: 6;
+}
+
+.start {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20rpx 0 20rpx;
+  background: #ff6659;
+  color: white;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.hongbao {
+  width: 96%;
+  height: 30rpx;
+  background: #f1dd2d;
+  color: #918b7b;
+  border-radius: 10rpx;
+  margin: 14rpx auto;
+}
+
+.list {
+  margin-top: 40rpx;
+  font-size: 28rpx;
+}
+
+.ul {
+  position: relative;
+  width: 100%;
+  height: 40rpx;
+  overflow: hidden;
+  margin-top: 30rpx;
+}
+
+.li {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #7b7666;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 40rpx;
+}
+
+.rollItem {
+  animation: roll 1500ms linear forwards;
+}
+
+@keyframes roll {
+  0% {
+    top: 0 ;
+  }
+
+  20% {
+    top: -16rpx;
+  }
+
+  40% {
+    top: -32rpx;
+  }
+
+  60% {
+    top: -48rpx;
+  }
+
+  80% {
+    top: -64rpx;
+  }
+
+  100% {
+    top: -80rpx;
+  }
+}
+
+.rule {
+  width: 100%;
+  padding: 40rpx 76rpx;
+  text-align: center;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.rule>view {
+  width: 100%;
+  text-align: left;
+  font-size: 24rpx;
+  line-height: 46rpx;
+  color: #918b7b
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 11;
+}
+
+.popup{
+  position: fixed;
+  width: 80%;
+  height: 70%;
+  left: 10%;
+  top: 15%;
+  background: #fca970;
+  border: 20rpx solid #fec900;
+  border-radius: 20rpx;
+  z-index: 111;
+  box-sizing: border-box;
+}
+
+.popup>view{
+  padding: 10rpx 24rpx 0; 
+  font-size: 28rpx;
+  color: white;
+}
+
+.prizeBox{
+  height: 330rpx;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.goods{
+  width: 100%;
+  height: 160rpx;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  background: white;
+  margin-bottom: 10rpx;
+}
+
+.prizeImg{
+  width: 160rpx;
+  height: 100%;
+  margin-left: 10rpx;
+}
+
+.prizeInfo{
+  width: calc(100% - 170rpx);
+  font-size: 28rpx;
+  color: #333;
+  padding: 14rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.prizeInfo>view{
+  width: 90%;
+}
+
+.total{
+  margin-top: 34rpx;
+  text-align: right;
+  color: #999;
+  font-size: 24rpx;
+  padding-right: 40rpx;
+}
+
+.infoLine{
+  color: white;
+  font-size: 28rpx;
+  padding: 0 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.infoLine>span{
+  display: inline-block;
+  width: 140rpx;
+  padding-left: 10rpx
+}
+
+.infoLine>input{
+  background: white;
+  color: #333;
+  width: 300rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+}
+
+.subBtn{
+  width: 80%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: white;
+  background: #fec900;
+  margin-top: 20rpx;
+  border: none;
+}

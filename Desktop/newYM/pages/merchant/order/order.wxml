@@ -1,0 +1,40 @@
+<!--pages/order/order.wxml-->
+<view class='order'>
+    <view class='header'>
+        <text class='active'>全部</text>
+        <text>未付款</text>
+        <text>已支付</text>
+        <text>已退款</text>
+    </view>
+    <view class='main'>
+        <view class='li'>
+            <view class='top'>
+                <view class='p'>
+                    点餐
+                </view>
+                <view class='p'>
+                    已支付
+                </view>
+            </view>
+            <view class='middle'>
+                <view class='div'>
+                    <image src='http://img0.imgtn.bdimg.com/it/u=1756633021,617129201&fm=26&gp=0.jpg'></image>
+                </view>
+                <view class='div'>
+                    <view class='p'>
+                        下单时间: 2019-05-01 19:00
+                    </view>
+                    <view class='p'>
+                        1张|总价: ￥0.10
+                    </view>
+                    <view class='p'>
+                        有效期至: 2019-05-01 00:00
+                    </view>
+                </view>
+            </view>
+            <view class='bottom'>
+                点餐订单
+            </view>
+        </view>
+    </view>
+</view>

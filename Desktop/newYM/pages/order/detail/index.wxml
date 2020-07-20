@@ -1,0 +1,18 @@
+<block wx:if='{{show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{!show}}'>
+  <view class='shopInfo'>
+    <view class='title'>商家信息</view>
+    <view class='infoLine flex flex-ver'><image src='/static/images/icon/dingwei.png'></image>{{info.merchname}}</view>
+    <view class='infoLine flex flex-ver'><image src='/static/images/icon/wait-128.png'></image>经营时间：{{info.starttime}}~{{info.starttime}}</view>
+    <view class='infoLine flex flex-ver'><image src='/static/images/icon/phone.png'></image>{{info.storephone}}</view>
+  </view>
+  <view style='background:white;border-bottom:2rpx solid #e5e5e5'>
+    <view class='title' style='border-bottom:2rpx solid #e5e5e5;margin-bottom: 10rpx'>订单信息</view>
+    <view class='orderInfo'>订单编号：{{info.ordersn}}</view>
+    <view class='orderInfo'>下单时间：{{ordertime}}</view>
+    <view class='orderInfo'>项目金额：{{info.consumemoney}}</view>
+    <view class='orderInfo'>实付金额：{{info.realmoney}}</view>
+  </view>
+</block>

@@ -1,0 +1,38 @@
+<!--pages/attribute/attribute.wxml-->
+<form bindsubmit='formSubmit'>
+  <view class='text_box'>购买须知</view>
+  <!--列表内容------------------------------ -->
+  <view class='contempt_box'>
+    <view>
+      <text>使用时间：</text>
+      <picker mode='time' bindchange="sTimeChange" name="todaytime_start" value='10:00'>
+        <view class="picker">
+          {{begin}}
+        </view>
+      </picker> 至
+      <picker mode='time' bindchange="eTimeChange" name="todaytime_end" start="{{sTime}}" value='23:00' >
+        <view class="picker">
+          {{end}}
+        </view>
+      </picker>
+    </view>
+    <view class='bili'>
+      <text>周天范围：</text>周
+      <input class="bili_inpuy" type='number' name="weektime_start"></input>至 周
+      <input class="bili_inpuy" type='number' name="weektime_end"></input>
+    </view>
+    <view>
+      <text>不可使用时间：</text>
+      <picker mode='date' bindchange="cantTimeChange" name="nousetime" start="{{cantUse}}">
+        <view class="picker" style='min-width:100rpx'>
+          {{cantTime==""?"请选择时间":cantTime}}
+        </view>
+      </picker>
+    </view>
+    <view class='rule'>
+      <text>使用规则：</text>
+      <textarea placeholder-class='textareaPl' value='' placeholder='例如无需预约，消费高峰可能需要等位' name="content"></textarea> 
+    </view>
+  </view>
+  <button form-type="submit" class='buttan'>下一步</button>
+</form>

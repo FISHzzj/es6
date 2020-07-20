@@ -1,0 +1,63 @@
+<!--pages/imglacigo/imglacigo.wxml-->
+<view class='content_box'>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img1" src='{{img.store_img1}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img1">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img2" src='{{img.store_img2}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img2">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img3" src='{{img.store_img3}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img3">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img4" src='{{img.store_img4}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img4">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img5" src='{{img.store_img5}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img5">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img6" src='{{img.store_img6}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img6">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img7" src='{{img.store_img7}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img7">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img8" src='{{img.store_img8}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img8">x</view>
+  </view>
+  <view class='nine-img'>
+    <view class='nine_div flex flex-ver flex-center'>
+      <image bindtap="upload" data-type="store_img9" src='{{img.store_img9}}'></image>
+    </view>
+    <view class='guanbi' catchtap="del"  data-type="store_img9">x</view>
+  </view>
+</view>
+<view class='text_aa'>
+  <text>您最多可上传9张图片！首图不能为空！</text>
+</view>
+<view class='butt_box'>
+  <view bindtap='confirm'>确定</view>
+</view>

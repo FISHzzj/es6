@@ -1,0 +1,153 @@
+/* pages/dial/record.wxss */
+page{
+  background: antiquewhite;
+  padding-bottom: 30rpx;
+}
+
+.prize{
+  background: white;
+  margin-top: 16rpx;
+  padding: 0 24rpx;
+  height: 280rpx;
+}
+
+.prize>.title{
+  height: 80rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #f3f3f3;
+  color: #930000;
+}
+
+.prize>.title>span{
+  color: #333;
+}
+
+.title+view{
+  width: 100%;
+  height: 200rpx;
+  padding: 16rpx 0;
+  box-sizing: border-box;
+}
+
+.prizeImg{
+  width: 30%;
+  height: 100%;
+}
+
+.prizeImg+view{
+  flex: 1;
+  color: #878787;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+
+.prizeImg+view>view{
+  width: 80%;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 11;
+}
+
+.popup{
+  position: fixed;
+  width: 80%;
+  height: 40%;
+  left: 10%;
+  top: 15%;
+  background: #fca970;
+  border: 20rpx solid #fec900;
+  border-radius: 20rpx;
+  z-index: 111;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+
+.popup>view{
+  padding: 10rpx 24rpx 0; 
+  font-size: 28rpx;
+  color: white;
+  margin: 20rpx 0 ;
+}
+
+.prizeBox{
+  height: 330rpx;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.goods{
+  width: 100%;
+  height: 160rpx;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  background: white;
+  margin-bottom: 10rpx;
+}
+
+.prizeImg{
+  width: 160rpx;
+  height: 100%;
+  margin-left: 10rpx;
+}
+
+.prizeInfo{
+  width: calc(100% - 170rpx);
+  font-size: 28rpx;
+  color: #333;
+  padding: 14rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.prizeInfo>view{
+  width: 90%;
+}
+
+.total{
+  margin-top: 34rpx;
+  text-align: right;
+  color: #999;
+  font-size: 24rpx;
+  padding-right: 40rpx;
+}
+
+.infoLine{
+  color: white;
+  font-size: 28rpx;
+  padding: 0 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.infoLine>span{
+  display: inline-block;
+  width: 140rpx;
+  padding-left: 10rpx
+}
+
+.infoLine>input{
+  background: white;
+  color: #333;
+  width: 300rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+}
+
+.subBtn{
+  width: 80%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: white;
+  background: #fec900;
+  margin-top: 30rpx;
+}

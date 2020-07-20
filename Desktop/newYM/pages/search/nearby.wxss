@@ -1,0 +1,244 @@
+/* pages/search/nearby.wxss */
+
+page {
+  background: #f5f5f5;
+  height: 100%;
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  z-index: 1111;
+  width: 100%;
+  height: 84rpx;
+  background: white;
+  border-bottom: 1px solid #e2e2e2;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+}
+
+.inputBox {
+  height: 64rpx;
+  width: 75%;
+  background: #f5f5f5;
+  border-radius: 34rpx;
+  margin: 10rpx 0 0 34rpx;
+  padding: 0 30rpx 0 30rpx;
+  box-sizing: border-box;
+}
+
+.inputBox>image {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.inputBox>input {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: normal;
+  padding-left: 10rpx;
+  width: 80%;
+}
+
+.pla {
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+
+.searchBtn>image{
+  /* display: inline-block;
+  margin: 20rpx 0 0 20rpx;
+  font-size: 28rpx;
+  color: #333; */
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 34rpx;
+}
+
+.filtrateBox{
+  position: fixed;
+  top: 88rpx;
+  height: 70rpx;
+  width: 100%;
+  background: white;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  line-height: 70rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.filtrateBox>view{
+  width: 25%;
+
+}
+
+.triangle{
+  border-bottom: 12rpx solid #333;
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  margin-left: 4rpx;
+}
+
+.act{
+  color: #9e9e9e;
+
+}
+
+.up{
+  border-bottom: 0;
+  border-top: 12rpx solid #9e9e9e;
+}
+
+.DSBox{
+  display: none;
+  position: fixed;
+  top: calc(90rpx + 70rpx);
+  width: 100%;
+  height: 75%;
+  background: white;
+  padding-bottom: 50rpx;
+}
+
+.showAnimation0{
+  opacity: 0;
+  display: flex;
+  animation: show 500ms 1 normal forwards;
+}
+
+@-webkit-keyframes show{
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.district{
+  width: 30%;
+  height: 100%;
+  color: #333;
+  font-size: 28rpx;
+  overflow: scroll;
+  border-right: 1px solid #f5f5f5;
+}
+
+.districtItem{
+  width: 100%;
+  box-sizing: border-box;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+}
+
+.districtItem>span{
+  height: 100%;
+  display: inline-block;
+  width: 80rpx;
+  border-bottom: 2px solid #a11a1a;
+  text-align: center;
+  box-sizing: border-box;
+
+}
+
+.streetBox{
+  height: 100%;
+  overflow: scroll;
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.street{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 30rpx;
+}
+
+.sortBox{
+  display: none;
+  position: fixed;
+  top: 160rpx;
+  width: 100%;
+  background: white;
+}
+
+.showAnimation1{
+  opacity: 0;
+  display: block;
+  animation: show 500ms 1 normal forwards;
+}
+
+.sortBox>view{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.shopList {
+  padding: 0 30rpx;
+  background: white;
+  border-bottom: 4rpx solid #ebebeb;
+}
+
+.shopItem {
+  padding: 24rpx;
+}
+
+.shopImg {
+  display: block;
+  width: 212rpx;
+  height: 190rpx;
+  border-radius: 12rpx
+}
+
+.shopInfo {
+  flex: 1;
+  padding-left: 56rpx;
+  color: #909090;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  flex-grow: 1;
+}
+
+.shopInfo>view {
+  height: 44rpx;
+}
+
+.shopName {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  font-size: 28rpx;
+}
+
+.shopInfo image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.null {
+  margin: 120rpx auto 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ccc;
+}
+
+.null>image {
+  width: 240rpx;
+  height: 250rpx;
+  margin: 30rpx 0 40rpx;
+}

@@ -1,0 +1,83 @@
+<!--pages/Sett_zhenjian/Sett_zhenjian.wxml-->
+<view class='head'>
+  证照上传
+</view>
+
+<view class='img_box'>
+  <view class='text_div'>
+    <text>营业执照副本上传</text>
+    <text class='tisi'>(只支持jpg,png文件)</text>
+  </view>
+  <view class='img_div'>
+    <view class='imgBox' wx:if="{{businesslicense_img!=''}}">
+      <span data-key='businesslicense_img' bindtap="del">x</span>
+      <image src='{{businesslicense_img}}'></image>
+    </view>
+    <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image' data-key='businesslicense_img' wx:if="{{businesslicense_img==''}}"></image>
+  </view>
+</view>
+<!-- 特许经营许可证-->
+<view class='img_box'>
+  <view class='text_div'>
+    <text>特许经营许可证上传</text>
+    <text class='tisi'>(只支持jpg,png文件)</text>
+  </view>
+  <view class='img_div'>
+    <view class='imgBox' wx:if="{{businesscertificate_img!=''}}">
+      <span data-key='businesscertificate_img' bindtap="del">x</span>
+      <image src='{{businesscertificate_img}}'></image>
+    </view>
+    <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image' data-key='businesscertificate_img' wx:if="{{businesscertificate_img==''}}"></image>
+  </view>
+</view>
+<!-- 法人代表身份证. -->
+<view class='img_box'>
+  <view class='text_div'>
+    <text>法人代表身份证正，反面上传</text>
+    <text class='tisi'>(只支持jpg,png文件)</text>
+  </view>
+  <view class='img_div'>
+    <view class='imgBox' wx:if="{{idcard_front_img!=''}}">
+      <span data-key='idcard_front_img' bindtap="del">x</span>
+      <image src='{{idcard_front_img}}'></image>
+    </view>
+    <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image' data-key='idcard_front_img' wx:if="{{idcard_front_img==''}}"></image>
+    <view class='imgBox' wx:if="{{idcard_back_img!=''}}">
+      <span data-key='idcard_back_img' bindtap="del">x</span>
+      <image src='{{idcard_back_img}}'></image>
+    </view>
+    <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image' data-key='idcard_back_img' wx:if="{{idcard_back_img==''}}"></image>
+  </view>
+</view>
+<!-- 开户许可证上传-->
+<view class='img_box'>
+  <view class='text_div'>
+    <text>开户许可证上传</text>
+    <text class='tisi'>(只支持jpg,png文件)</text>
+  </view>
+  <view class='img_div'>
+    <view class='imgBox' wx:if="{{promiseopen_img!=''}}">
+      <span data-key='promiseopen_img' bindtap="del">x</span>
+      <image src='{{promiseopen_img}}'></image>
+    </view>
+    <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image' data-key='promiseopen_img' wx:if="{{promiseopen_img==''}}"></image>
+  </view>
+</view>
+<!-- 其他资料上传-------------------- -->
+<view class='img_box'>
+  <view class='text_div'>
+    <text>其他资料上传</text>
+    <text class='tisi'>(只支持jpg,png文件)</text>
+  </view>
+  <view class='img_div'>
+    <view class='imgBox' wx:if="{{else_image!=''}}">
+      <span data-key='else_image' bindtap="del">x</span>
+      <image src='{{else_image}}'></image>
+    </view>
+    <image src='/static/images/icon/add.png' class='add' bindtap='upload' data-type='image' data-key='else_image' wx:if="{{else_image==''}}"></image>
+  </view>
+</view>
+
+<view class='butt_box' bindtap='next'>
+  <view>下一步</view>
+</view>

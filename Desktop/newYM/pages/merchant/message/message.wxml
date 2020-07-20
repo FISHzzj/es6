@@ -1,0 +1,44 @@
+<!--pages/message/message.wxml-->
+<view class='message'>
+    <view class='main'>
+        <view class='li'>
+            <view>
+                <text>信息类型:系统信息</text>
+                <text>2019-04-27 14:32</text>
+            </view>
+            <view>
+                <text>优惠买单</text>
+            </view>
+            <view>
+                优惠买单ME20190427143204964874 支付完成 ,订单总金额：5.16 元 , 商户预计入账 4.8元。
+            </view>
+        </view>
+        <view class='li'>
+            <view>
+                <text>信息类型:系统信息</text>
+                <text>2019-04-27 14:32</text>
+            </view>
+            <view>
+                <text>优惠买单</text>
+            </view>
+            <view>
+                优惠买单ME20190427143204964874 支付完成 ,订单总金额：5.16 元 , 商户预计入账 4.8元。
+            </view>
+        </view>
+        <view class='li'>
+            <view>
+                <text>信息类型:系统信息</text>
+                <text>2019-04-27 14:32</text>
+            </view>
+            <view>
+                <text>优惠买单</text>
+            </view>
+            <view>
+                优惠买单ME20190427143204964874 支付完成 ,订单总金额：5.16 元 , 商户预计入账 4.8元。
+            </view>
+        </view>
+    </view>
+    <view class='prompt'>
+        没有数据了
+    </view>
+</view>

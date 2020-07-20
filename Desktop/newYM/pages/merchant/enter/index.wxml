@@ -1,0 +1,10 @@
+<!--pages/Settledin/Settledin.wxml-->
+<view class='body'>
+  <view class='textbot boxs'>
+    <text>{{status==0?"你的资料正在审核中，请耐心等待":"你资料还未提交审核，请填写完整后提交"}}</text>
+  </view>
+</view>
+<view class='butt_box boxs'>
+  <navigator url='/pages/merchant/enter/Settledin_xq/Settledin_xq' wx:if="{{status==-1}}">填写资料</navigator>
+  <navigator url='/pages/member/index/index' open-type="switchTab" style='background:white;border:1px solid #e532a0;color:#e532a0' wx:else>回到会员中心</navigator>
+</view>

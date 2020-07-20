@@ -1,0 +1,70 @@
+<!--pages/Orderdetails/Orderdetails.wxml-->
+
+<view class="title flex flex-ver flex-jcsb">
+  <span class="back" bindtap="back"></span>
+  {{merchInfo.merchname}}
+  <view style="width:26rpx;"></view>
+</view>
+<view class="line flex flex-ver">
+  消费金额（元）：<text class="colob">{{orderInfo.realmoney}}</text>
+  <view class="flex-1"></view>
+  <text>{{orderInfo.projectname}}</text>
+</view>
+<view class="switchLine flex flex-ver">
+  <image src="/static/images/icon-red/redpacket.png"></image>红包抵扣
+  <text class="colob">({{credit2}})</text>
+  <view class="flex-1"></view>
+  <switch id="redpacket" class='none' bindchange="switchChange" disabled='{{orderInfo.isdeduction==1 }}' data-type="redpacket"></switch>
+  <label for="redpacket" class="{{isRedpacket?'checked':''}}"></label>
+</view>
+<view class="switchLine flex flex-ver">
+  <image src="/static/images/icon/catBean.png"></image>猫豆抵扣
+  <text class="colob">({{credit3}})</text>
+  <view class="flex-1"></view>
+  <switch id="catBean" class='none' bindchange="switchChange" disabled='{{orderInfo.isdeduction==1 }}' data-type="catBean"></switch>
+  <label for="catBean" class="{{isCatbean?'checked':''}}"></label>
+</view>
+
+
+<!-- <view class='top'>
+  <view style='font-size:30rpx;'>配送地址：</view>
+  <textarea></textarea>
+  <view class='receiveInfo'>
+    姓名：
+    <input></input>
+  </view>
+  <view class='receiveInfo'>
+    电话：
+    <input></input>
+  </view>
+</view>
+<view>订单详情：</view>
+<scroll-view class='goodsBox' scroll-y>
+  <view class='goods flex' wx:for="{{goodsList}}" wx:key="index">
+    <image src='{{item.thumb}}'></image>
+    <view class='goodsInfo'>
+      <view class='goodsTitle ell '>{{item.description}}</view>
+      <view>￥{{item.price}}
+        <span>x{{item.total}}</span>
+      </view>
+    </view>
+  </view>
+</scroll-view> -->
+
+<view class='btmBox'>
+  <!-- <view class='content_div'>
+    <text>消费金额</text>
+    <text class='colob'>{{orderInfo.realmoney}}</text>
+  </view>
+  <view class='content_div'>
+    <text>红包抵扣(<text class="colob">{{credit2}}</text>)</text>
+    <switch color="#e532a0" class='switch' bindchange="switchChange" disabled='{{orderInfo.isdeduction==1 }}'></switch>
+  </view> -->
+  <view class='payBox flex'>
+    <view class='flex flex-ver'>
+      <image src='/pages/img/avart.png'></image>
+      实付金额（元）：{{sum}}
+    </view>
+    <button class='pay' bindtap='pay' disabled='{{isbutton}}'>去支付</button>
+  </view>
+</view>

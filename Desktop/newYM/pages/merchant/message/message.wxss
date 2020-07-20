@@ -1,0 +1,27 @@
+/* pages/message/message.wxss */
+.li {
+    font-size: 0.85rem;
+    padding: 20rpx;
+    color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.li view {
+    margin-bottom: 10rpx; 
+}
+.li view:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+.li view:first-child text:last-child {
+    color: rgba(0, 0, 0, 0.7);
+}
+.li view:nth-child(2) {
+    color: rgba(0, 0, 0, 0.8);
+}
+/* 提示 */
+.prompt {
+    margin-top: 10rpx; 
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}

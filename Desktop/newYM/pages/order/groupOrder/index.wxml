@@ -1,0 +1,33 @@
+<!--pages/order/groupOrder/index.wxml-->
+<view style='line-height:60rpx;text-align:center;color:#8a8a8a;border-top:2px solid #ececec;font-size:28rpx;'>{{merchDetail.merchname}}</view>
+<view class='line flex flex-ver flex-jcsb'>
+  消费金额(元)
+  <text class='pink'>{{exPrice}}</text>
+</view>
+<view class='line flex flex-ver flex-jcsb'>
+  优惠金额(元)
+  <text class='pink'>{{disPrice}}</text>
+</view>
+<view class='line flex flex-ver flex-jcsb'>
+  实付金额(元)
+  <text class='pink'>{{orderPrice}}</text>
+</view>
+<view class='line flex flex-ver flex-jcsb'>
+  购买数量
+  <view class='numCtrl flex flex-jcsb flex-ver'>
+    <span bindtap="minus" style="border-right:1px solid #d9d9d9;{{num==1?'color:#666666':''}}">-</span>
+    {{num}}
+    <span bindtap="plus" style="border-left:1px solid #d9d9d9">+</span>
+  </view>
+</view>
+<view class='info flex flex-ver'>
+  团购券： {{goodsInfo.title}}
+</view>
+<view class='info flex flex-ver'>
+  野猫红包： {{res.redpacket}}
+</view>
+<view class='info flex flex-ver'>
+  使用时间： {{info.usetime_limit}}
+</view>
+
+<button class='confirm' bindtap='confirm'>确认订单</button>

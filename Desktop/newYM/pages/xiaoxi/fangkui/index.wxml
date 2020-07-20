@@ -1,0 +1,24 @@
+<view class='page'>
+  <!-- 优惠券 -->
+  <view class='coupon-box'>
+    <view class='coupon-item flex flex-ver flex-jcsb' wx:for="{{tw}}" wx:key="id">
+      <view class='couponInfo'>
+        <view>{{item.title}}</view>
+        <view>
+          <text>{{item.msg}}</text></view>
+        <view>
+          <text>{{item.time}}</text></view>
+      </view>
+    </view>
+    <view class='coupon-item flex flex-ver flex-jcsb' wx:for="{{hd}}" wx:key="id">
+      <view class='couponInfo'>
+        <view>{{item.title}}</view>
+        <view>
+          <text>{{item.msg}}</text></view>
+        <view>
+          <text>{{item.time}}</text></view>
+      </view>
+    </view>
+  </view>
+  <navigator url="/pages/xiaoxi/faqifangkui/index" hover-class="none" class="fankui">发起反馈</navigator>
+</view>

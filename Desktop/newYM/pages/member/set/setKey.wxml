@@ -1,0 +1,14 @@
+<!--pages/member/set/setKey.wxml-->
+<view class='line'>
+  后台账号
+  <text>{{account}}</text>
+</view>
+<form bindsubmit='submit'>
+  <view class='line flex flex-ver'>
+    新密码  <input placeholder='请输入新密码' name="key" type='key' password></input>
+  </view>
+  <view class='line flex flex-ver'>
+    确认密码<input placeholder='请再次确认密码' name="reKey" password></input>
+  </view>
+  <button form-type='submit' class='submitBtn'>提交</button>
+</form>

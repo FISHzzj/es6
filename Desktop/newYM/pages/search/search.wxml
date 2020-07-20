@@ -1,0 +1,47 @@
+<!--pages/search/search.wxml-->
+<!-- 搜索框 -->
+<view class='top'>
+  <view class="inputBox flex flex-ver">
+    <image src="/pages/img/search-gray.png"></image>
+    <input placeholder="输入商家名、品类或商圈" placeholder-class="pla" bindinput='inp' bindfocus="focus" bindblur='blur'></input>
+  </view>
+  <image class='searchBtn' src='/pages/img/search.png' bindtap='search'></image>
+</view>
+
+<view style='height:88rpx;'></view>
+
+<!-- 分类 -->
+<swiper class='swiper' wx:if="{{isClassify}}">
+  <swiper-item class='classifyBox flex flex-wrap' wx:for="{{classifyList}}" wx:key="index" wx:for-item="item">
+    <view class='classify' bindtap='secondary' wx:for="{{item}}" wx:for-item="classify" wx:key="*this" data-id='{{classify.id}}' data-ishotelurl='{{classify.ishotelurl}}'>
+      <view class='imgBox {{act==classify.id?"act":""}}'>
+        <image src='{{classify.advimg}}'></image>
+      </view>
+      <view>{{classify.name}}</view>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view style='height:20rpx' wx:if="{{isClassify}}"></view>
+
+<!-- 店铺列表 -->
+<view class='shopList' wx:if="{{isShop}}">
+  <navigator class='shopItem flex' url='/pages/shop/detail/detail?id={{item.id}}' wx:for="{{shopList}}" wx:key="index">
+    <image class='shopImg' src='{{item.logo}}'></image>
+    <view class='shopInfo'>
+      <view class='shopName'>{{item.merchname}}</view>
+      <view class='flex'>
+        <image src="/pages/img/star.png" wx:for="{{item.startLength}}" wx:key="index" wx:for-item="start"></image>
+      </view>
+      <view>{{item.categoryname}}</view>
+      <view>已售{{item.sellcount}}
+        <text style='float:right'>{{item.distance_um}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<view class='null' wx:if="{{shopList.length==0}}">
+  <image src='/pages/img/search_list.png'></image>
+  <view>暂时没有任何记录!</view>
+</view>

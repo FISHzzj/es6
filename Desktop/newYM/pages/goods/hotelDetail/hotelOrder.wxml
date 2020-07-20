@@ -1,0 +1,59 @@
+<!--pages/goods/hotelDetail/hotelOrder.wxml-->
+<view class='roomInfo'>
+  <view class='title'>{{detail.merchname}}</view>
+  <view>{{info.start}}至{{info.end}} 共{{info.count_days}}晚</view>
+  <view>{{info.title}}</view>
+  <view>{{info.hotel_condition_str}},￥{{info.marketprice}}/晚</view>
+</view>
+
+<!-- 房间&人数 -->
+<view class='line flex flex-jcsb flex-ver'>
+  房间数
+  <view class='flex flex-ver'>
+    <view class='numBtn' bindtap='minus'>-</view>
+    <view class='num'>{{roomNum}}</view>
+    <view class='numBtn' bindtap='plus'>+</view>
+  </view>
+</view>
+
+<form bindsubmit='submit'>
+  <!-- 入住人信息 -->
+  <view class='line flex flex-jcsb flex-ver' wx:for="{{checkInList}}" wx:key="index">
+    入住人{{item.index}}
+    <view class='flex flex-ver'>
+      <input type='text' placeholder='每间填写一人姓名' placeholder-class='inpStyle' name="names{{index}}"></input>
+    </view>
+  </view>
+  <view style='height: 20rpx'></view>
+
+  <!-- 手机号码 -->
+  <view class='line flex flex-jcsb flex-ver'>
+    手机号码
+    <view class='flex flex-ver'>
+      <input type='text' placeholder='请填写正确的手机号' placeholder-class='inpStyle' name="phone"></input>
+    </view>
+  </view>
+  <view style='height: 20rpx'></view>
+
+  <!-- 到店时间 -->
+  <view class='line flex flex-jcsb flex-ver'>
+    预计到店
+    <view class='flex flex-ver'>
+      <picker mode="time" value="{{checkInTime}}" bindchange="bindTimeChange" name="showBank">
+        <view class="picker">
+          <text>{{checkInTime}} ></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view style='height: 20rpx'></view>
+
+  <view class='line flex flex-jcsb flex-ver'>
+    订单合计
+    <view class='flex flex-ver'>
+      <span>￥0.1</span>
+    </view>
+  </view>
+
+  <button class='submitBtn' form-type='submit'>提交订单</button>
+</form>

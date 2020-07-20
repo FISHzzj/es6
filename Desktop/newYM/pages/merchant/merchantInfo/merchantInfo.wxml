@@ -1,0 +1,56 @@
+<!--pages/merchant/merchantInfo/merchantInfo.wxml-->
+<swiper class='swiper_box' autoplay interval="2500" circular="true" bindtap='toUpload'>
+  <swiper-item wx:for="{{banner}}" wx:key="index">
+    <image src="{{item}}" class="slide-image"></image>
+  </swiper-item>
+</swiper>
+  <!-- <view class='addBox flex flex-ver flex-center' catchtap='toUpload' wx:if="{{banner.length==0}}">
+    <image src='/static/images/icon/add.png'></image>
+  </view> -->
+  <view class='content_box'>
+    <view class='content_div'>
+      <text>商家简介</text>
+      <span>{{memberInfo.introduction}}</span>
+    </view>
+    <view class='content_div'>
+      <text>行业类别</text>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" range="{{cList}}" range-key='value' name="category" value='{{category}}' disabled>
+        <view class="picker">
+          {{cList[0][parentIndex].value}},{{cList[1][childIndx].value}}
+        </view>
+      </picker>
+    </view>
+    <view class='content_div'>
+      <text>店门名称</text>
+      <span>{{memberInfo.storename}}</span>
+    </view>
+    <view class='content_div'>
+      <text>店门电话</text>
+      <span>{{member.storephone}}</span>
+    </view>
+    <view class='content_div'>
+      <text>店门区域</text>
+      <picker mode="region" bindchange="bindRegionChange" value="{{}}" custom-item="{{customItem}}" name="area">
+        <view class="picker">
+          {{member.area}}
+        </view>
+      </picker>
+    </view>
+    <view class='content_div'>
+      <text>所在城镇</text>
+      <span>{{town}}</span>
+    </view>
+    <view class='content_div flex-wrap'>
+      <text>店门地址</text>
+      <span>{{member.store_address}}</span>
+      <!-- <button bindtap='searchAddress'>搜索</button> -->
+    </view>
+    <view class='content_div'>
+      <text>地图标注</text>
+      <text style='padding-left: 20rpx;'>纬度：{{location.lat}}，经度：{{location.lng}}</text>
+    </view>
+  </view>
+  <!-- 地图 -->
+  <map class='ditu_box' longitude="{{location.lng}}" latitude="{{location.lat}}" show-location bindtap="mapMove">
+
+  </map>

@@ -1,0 +1,120 @@
+/* pages/menu/menu.wxss */
+page{
+  background: #f5f5f5;
+  height: 100%;
+}
+
+.box{
+  height: calc(100% - 80rpx);
+}
+
+.shopInfo{
+  color: #333;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  padding-left: 24rpx;
+}
+
+.classifySide{
+  background: white;
+  width: 190rpx;
+  color: #333;
+  height: 100%;
+  font-size: 28rpx;
+  border-right: 2rpx solid #e9e9e9;
+}
+
+.classifySide view{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.act{
+  background: #f5f5f5;
+}
+
+.goodsList{
+  height: 100%;
+}
+
+.title{
+  color: #333;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border-left: 3px solid #e532a0;
+  padding-left: 10rpx;
+  margin-bottom: 1px;
+  background: white;
+}
+
+.goods{
+  width: 100%;
+  background: white;
+  padding: 30rpx 16rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+
+.goods>image{
+  width: 164rpx;
+  height: 164rpx;
+
+}
+
+.goodsInfo{
+  position: relative;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.goodsTitle{
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 54rpx;
+}
+
+.price{
+  color: #df1f0c;
+  font-size: 28rpx;
+  margin-top: 6rpx;
+}
+
+.goodsInfo>image{
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  right: 10rpx;
+  bottom: 10rpx;
+}
+
+.cart{
+  position: fixed;
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #e532a0;
+  color: white;
+  border-radius: 45rpx;
+  padding: 0 30rpx;
+  z-index: 111;
+  bottom: 40rpx;
+  left: 5%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.cart cover-view{
+  display: block;
+  width: 120rpx;
+  /* text-align: center; */
+  font-size: 32rpx;
+  line-height: 84rpx;
+  margin: 0;
+  color: white;
+}

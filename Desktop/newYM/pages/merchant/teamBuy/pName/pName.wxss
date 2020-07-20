@@ -1,0 +1,23 @@
+/* pages/merchant/teamBuy/pName/pName.wxss */
+.line{
+  height: 94rpx;
+  color: #333;
+  font-size: 28rpx;
+  padding-left: 24rpx;
+}
+
+.line>input{
+  margin-top: 6rpx;
+}
+
+.next{
+  width: 90%;
+  height: 76rpx;
+  background: #e532a0;
+  border-radius: 10rpx;
+  margin: 30rpx auto;
+  color: white;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 76rpx;
+}

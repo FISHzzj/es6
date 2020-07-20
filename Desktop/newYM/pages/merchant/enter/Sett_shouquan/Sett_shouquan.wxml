@@ -1,0 +1,15 @@
+<!--pages/Sett_zhuti/Sett_zhuti.wxml-->
+<view class='head_box'>
+  输入授权码
+</view >
+<form bindsubmit='submit'>
+  <view class='text_div'>
+    <input type='text' name="code" placeholder='请输入授权码'></input>
+  </view>
+  <view class='butt_box'>
+    <button form-type='submit'>提交</button>
+  </view>
+</form>
+<view class='baktix'>请咨询您的推广商索取授权码完成最后一步的入驻流程</view>
+    
+
