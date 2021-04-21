@@ -1,0 +1,43 @@
+/* 重写 vant 框架 默认样式 */
+.van-button {
+    border-radius: 5px!important;
+}
+.van-button--gray {
+    background-color: #ccd5e5!important;
+    color: white!important;
+    border: 1px solid #cdcdcd!important;
+}
+.red {
+    color: #bd354c!important;
+}
+.green {
+    color: #02c186!important;
+}
+.blue {
+    color: #4c81e8!important;
+}
+.purple {
+    color: #8b66d0!important;
+}
+.gray {
+    color: #999!important;
+}
+.yellow {
+    color: #f1e92a!important;
+}
+.deepGreen {
+    color: green!important;
+}
+.shallow {
+    color: #ccc!important;
+}
+/* .van-nav-bar {
+    height: 50px!important;
+    background-color: #4c81e8!important;
+}
+.van-nav-bar__arrow {
+    color: white!important;
+}
+.van-nav-bar__title {
+    color: white!important;
+} */
