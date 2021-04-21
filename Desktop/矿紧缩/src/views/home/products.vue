@@ -39,8 +39,8 @@
                             <div class="name line">{{item.title}}</div>
                             <div class="first second"> <!-- 算力:110TH/s  | --> 功耗:{{item.power}}kw/h</div> 
                             
-                            <div class="first">预计日产出:{{item.today_bi}} {{item.unit}}/台</div>
-                            <div class="first">≈{{item.cny}} CNY/台</div>
+                            <div class="first">预计日产出:{{item.today_bi}} {{item.cunit}}/台</div>
+                            <div class="first">≈{{item.cny}} CNY/{{item.unit}}</div>
                             <div class="bottom">
                                 <div class="price">{{item.marketprice}}<span>CNY</span></div>
                                 <div class="price1">≈{{item.usdt}}USDT</div>
